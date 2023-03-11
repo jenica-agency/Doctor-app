@@ -9,7 +9,7 @@ const reserveSchema = new Schema(
     phone_num: { type: String, required: true },
     other_phone: { type: String },
     state: { type: Boolean, required: true },
-    state: { type: Date, required: true },
+    reserve_date: { type: Date, required: true },
   },
   { timestamps: true }
 );
