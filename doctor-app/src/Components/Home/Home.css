@@ -1,0 +1,74 @@
+@import '../../index.css';
+
+/* cover slide home  */
+.home-hero{
+    margin-top: 45px;   
+    position: relative; 
+    background-image: linear-gradient(to right, var(--main-color), var(--color-one), var(--color-two) , var(--color-three));
+}
+
+.doctor-image{
+    width: 80%;
+    margin-top: 5px;
+}
+.content-home{
+    margin-top: 150px;
+}
+.title-cover-home,
+.p-cover-home,
+.doctor-name-cover-home{
+    color: var(--light-color);
+}
+.p-cover-home{
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+@media screen and (max-width : 1200px ) and (min-width: 993px) {
+    .content-home {
+        margin-top: 50px;
+    }
+}
+@media screen and (max-width : 992px) and (min-width: 768px) {
+    .content-home {
+        margin-bottom: 200px;
+        margin-top: 40px ;
+    }
+    .doctor-image{
+        width: 100%;
+    }
+}
+@media screen and (max-width : 768px) and (min-width: 300px){
+    .content-home {
+            margin-bottom: 250px;
+            margin-top: 40px;
+        }
+}
+ 
+/* svg background color  */
+.custom-shape-divider-bottom-1678534839 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    
+}
+
+.custom-shape-divider-bottom-1678534839 svg {
+    position: relative;
+    display: block;
+    width: calc(129% + 1.3px);
+    height: 352px;
+}
+
+.custom-shape-divider-bottom-1678534839 .shape-fill {
+    fill: #FFFFFF;
+}
+@media screen and (max-width: 768px) {
+    .custom-shape-divider-bottom-1678534839 svg{
+        width: calc(146% + 1.3px);
+        height: 222px;
+    }
+}
