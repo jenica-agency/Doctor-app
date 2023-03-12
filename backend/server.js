@@ -1,0 +1,35 @@
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+
+//import routs
+const statisticsRouts = require("./routes/statistics");
+const servicesRouts = require("./routes/services");
+
+const PORT = process.env.PORT || 6000;
+const app = express();
+
+//middleware
+app.use(express.json());
+app.use((req, res, next) => {
+  console.log(req.path, req.method);
+  next();
+});
+
+//routes
+app.use("/statistics", statisticsRouts);
+app.use("/services", servicesRouts);
+
+//connect to database
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(
+        "Connected with database & The server was up in PORT : " + PORT
+      );
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
