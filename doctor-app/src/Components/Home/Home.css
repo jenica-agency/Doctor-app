@@ -1,6 +1,6 @@
 @import '../../index.css';
 
-/* cover slide home  */
+/****************** cover slide home ****************/
 .home-hero{
     margin-top: 45px;   
     position: relative; 
@@ -23,6 +23,7 @@
     font-size: 1.1rem;
     line-height: 1.9;
 }
+
 @media screen and (max-width : 1200px ) and (min-width: 993px) {
     .content-home {
         margin-top: 50px;
@@ -71,4 +72,72 @@
         width: calc(146% + 1.3px);
         height: 222px;
     }
+}
+
+/**************contact home info in home ******************************/
+.phone-home,
+.calender-home,
+.email-home,
+.address-home {
+    border-right: 1px solid var(--main-color);
+}
+
+.phone-icon-home,
+.calender-icon-home,
+.email-icon-home,
+.address-icon-home {
+    color: var(--main-color);
+    font-size: 20px;
+}
+/* **************** doctor info home pref ************************ */
+.home-doctor-info{
+    direction: rtl;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.doctor-cote-left{
+    padding-top: 7%;
+    padding-bottom: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    box-shadow:  0 0 40px 0 rgb(64 64 64 / 25%);
+    position: relative;
+}
+.p-doctor-cote{
+    text-align: right;
+    font-size: 18px;
+    line-height: 1.7;
+}
+.cote-icon-home-info{
+    color:var(--color-one);
+    font-size:70px;
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    opacity: 0.5;
+}
+.doctor-info-right{
+    padding-top: 5%;
+}
+.btn-doctor-info{
+    margin-top: 3%;
+    background-color: var(--color-two);
+    color: var(--light-color);
+}
+.btn-doctor-info:hover,
+.btn-doctor-info:focus,
+.btn-doctor-info:active,
+.btn-doctor-info:visited{
+    background-color: var(--main-color);
+    color: var(--light-color);
+}
+
+/* *******************Doctor home blogs ********************* */
+.home-doctor-Blog{
+    background-image: url(../../images/background.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 300px;
+    opacity: 0.9;
 }
