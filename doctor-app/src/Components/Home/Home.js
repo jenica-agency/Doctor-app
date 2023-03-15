@@ -11,22 +11,39 @@ import 'bootstrap/dist/js/bootstrap.bundle.js';
 
 // fontawsomn links 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faSquarePhoneFlip} from '@fortawesome/free-solid-svg-icons';
-import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
-import {faClock} from '@fortawesome/free-solid-svg-icons';
-import {faLocationDot} from '@fortawesome/free-solid-svg-icons';
-import {faQuoteLeft} from '@fortawesome/free-solid-svg-icons';
+import {
+        faSquarePhoneFlip,
+        faEnvelope,
+        faClock,
+        faLocationDot,
+        faQuoteLeft,
+        faChildDress,
+        faPerson,
+        faPersonBreastfeeding
+      } 
+        from '@fortawesome/free-solid-svg-icons';
 
 // image 
-import doctor from '../../images/doctor.png';
+
 
 // translate links 
 import {useTranslation} from 'react-i18next';
+// page 
+import BlogsFun from '../Blogs/BlogsFun';
+
+
+// data
+import dataBlog from '../Api/dataBlogs';
+
+
 
 
 
 function Home() {
   const {t} = useTranslation();
+  const Blogs = dataBlog;
+ 
+    console.log(Blogs);
   return (
     <Fragment>
       {/* cover section in home  */}
@@ -39,7 +56,7 @@ function Home() {
           <div className='home-slide'>
               <div className='container row m-auto cover-content-home'>
                   <div className='cover-left col-lg-6 col-md-6 col-sm-12 '>
-                      <img src={doctor} alt='doctor'  className='doctor-image'/>
+                      <img src={"assest/doctor.png"} alt='doctor'  className='doctor-image'/>
                   </div>
                   <div className='cover-right col-lg-6 col-md-6 col-sm-12  content-home'>
                     <h2 className='title-cover-home'>{t('home.TitleCoverHome')}</h2>
@@ -50,7 +67,7 @@ function Home() {
           </div>
       </section>
       {/* contact info in home  */}
-      <section className='home-contact-info mt-3 mb-5' >
+      <section className='home-contact-info  mb-4' >
         <div className='container'>
           <div className='row'>
 
@@ -143,11 +160,43 @@ function Home() {
           </div>
         </div>
       </section>
+      {/* blog section home  */}
       <section className='home-doctor-Blog '>
         <div className='container'>
-
+           <BlogsFun newBlogs={Blogs}></BlogsFun>
         </div>
       </section>
+      {/* services section home  */}
+       <section className='home-doctor-services'>
+        <div className='container'>
+          <div className='row'>
+             
+             <div className='col-lg-4 col-md-4 col-sm-12 home-review'>
+               <FontAwesomeIcon icon={faPerson} className = "user-icon-home">
+                    </FontAwesomeIcon>
+                <h3>5000</h3>
+                <h4> {t('home.MailHomeIcon')} </h4>
+                <p> {t('home.MailHomeDesc')} </p>
+             </div>
+
+             <div className='col-lg-4 col-md-4 col-sm-12 home-review'>
+                <FontAwesomeIcon icon={faChildDress} className = "user-icon-home">
+                    </FontAwesomeIcon>
+                <h3>9000</h3>
+                <h4> {t('home.FemaleHomeIcon')} </h4>
+                <p> {t('home.FemaleHomeDesc')} </p>
+             </div>
+
+             <div className='col-lg-4 col-md-4 col-sm-12 home-review'>
+                <FontAwesomeIcon icon={faPersonBreastfeeding} className = "user-icon-home">
+                    </FontAwesomeIcon>
+                <h3>10000</h3>
+                <h4> {t('home.MotherHomeIcon')} </h4>
+                <p> {t('home.MotherHomeDesc')} </p>
+             </div>
+          </div>
+        </div>
+       </section>
     </Fragment>
   )
 }

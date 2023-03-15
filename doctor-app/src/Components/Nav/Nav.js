@@ -12,6 +12,8 @@ import Booking from '../Booking/Booking';
 import FAQs from '../FAQs/FAQs';
 import { Translation } from 'react-i18next';
 import './Nav.css';
+import SingleBlog from './../SingleBlog/SingleBlog';
+
 
 
 export default class Nav extends Component {
@@ -135,6 +137,7 @@ export default class Nav extends Component {
                             <Route path="/FAQs" element={<FAQs/>}></Route>
                             <Route path="/Contact" element={<Contact/>}></Route>
                              <Route path="/Booking" element={<Booking/>}></Route>
+                             <Route path="/Blogs/:id" element={<SingleBlog/>} />
                      </Routes>
             </BrowserRouter>
           

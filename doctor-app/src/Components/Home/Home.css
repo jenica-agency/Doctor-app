@@ -134,10 +134,17 @@
 
 /* *******************Doctor home blogs ********************* */
 .home-doctor-Blog{
-    background-image: url(../../images/background.jpg) ;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: 300px;
-    opacity: 0.9;
+    filter: opacity(80%);
+    -webkit-filter: opacity(80%);
+    color: var(--dark-color);
+    padding-bottom: 5%;
+}
+/* *************doctor home reviews ******************** */
+.home-doctor-services{
+    background: url(../../../public/assest/background.jpg)  fixed;
+    padding: 5% 0 ;
+    color: var(--light-color);
 }
