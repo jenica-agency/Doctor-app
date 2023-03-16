@@ -1,18 +1,18 @@
 const dataFAQ = [
     {
         id :1,
-        question: "What is the best way to get started? 1",
-        answer: "Go to the top of the page"
+        question: "السؤال الاول ",
+        answer: "اجابة السؤال الاول"
     },
     {
         id :2,
-        question: "What is the best way to get started? 2",
-        answer: "Go to the top of the page"
+        question: "السؤال الثانى ",
+        answer: "اجابة السؤال الثانى "
     },
     {
         id :3,
-        question: "What is the best way to get started? 3",
-        answer: "Go to the top of the page"
+        question: "السؤال الثالث",
+        answer: "اجابة السؤال الثالث "
     }
 ]
 export default dataFAQ;

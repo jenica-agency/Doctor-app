@@ -1,6 +1,46 @@
+/***************** right faqs **************** */
 .accordion-simple > .active{
     display: block;
+   
 }
 .accordion-faq .inactive{
     display: none;
 }
+
+/****************** total faqs **************** */
+.faq-container{
+    margin-top: 7%;
+    
+}
+.accordion-faq-content{
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 25px 15px;
+    border: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    width: 100%;
+    direction: rtl;
+    text-align: start;
+}
+.accordion-faq-content:hover,
+.accordion-faq-content:focus
+{
+    background-color: var(--color-two);
+    color: var(--light-color);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.accordion-faq-answer > p {
+    border-top: 3px solid var(--light-color);
+    margin-bottom: 0%;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+

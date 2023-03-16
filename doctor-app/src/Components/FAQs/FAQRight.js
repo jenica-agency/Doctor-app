@@ -23,13 +23,12 @@ function FAQRight({newFAQs}) {
     <Fragment>
       <div className='accordion-faq'>
         {newFAQs.map((FAQ, index) => (
-         <div key={index} onClick={() => accordionToggle(index)}>
-
-            <div className='accordion-faq-heading'>
-              <h3 className={Accordion === index ? "active" :""}> {FAQ.question}</h3>
-            </div>
-
-            <div className='accordion-faq-icons'>
+         <button key={index} onClick={() => accordionToggle(index)} className='accordion-faq-content '>
+            <div  className='row'>
+              <div className='accordion-faq-heading col-10'>
+                <h5 className={Accordion === index ? "active" :""}> {FAQ.question}</h5>
+              </div>
+              <span className='accordion-faq-icons col-2 '>
                 {
                   Accordion === index? (
                     <>
@@ -43,13 +42,14 @@ function FAQRight({newFAQs}) {
                     </>
                   )
                 }
+              </span>
             </div>
-
+         
             <div className='accordion-faq-answer'>
               <p className={Accordion === index ? "active" :"inactive"}>{FAQ.answer}</p>
             </div>
 
-         </div>)
+         </button>)
          )
         }
 

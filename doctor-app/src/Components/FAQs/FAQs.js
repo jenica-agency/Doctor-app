@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import FAQRight from './FAQRight';
 import dataFAQ from '../Api/dataFAQ';
+import './FAQ.css';
 
 function FAQs() {
 
@@ -9,8 +10,8 @@ function FAQs() {
 
       return (
         <Fragment>
-          <div className='container mt-5'>
-            <div className='row'>
+          <div className='container faq-container'>
+            <div className='row '>
               <div className='FAQ-right col-lg-6 col-md-6 col-sm-12' >
                   <FAQRight newFAQs={FAQs}>
 
