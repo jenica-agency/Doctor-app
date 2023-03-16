@@ -34,8 +34,7 @@ import BlogsFun from '../Blogs/BlogsFun';
 
 // data
 import dataBlog from '../Api/dataBlogs';
-
-
+// import FAQs from '../FAQs/FAQs';
 
 
 
@@ -167,7 +166,7 @@ function Home() {
         </div>
       </section>
       {/* services section home  */}
-       <section className='home-doctor-services'>
+       <section className='home-doctor-reviews'>
         <div className='container'>
           <div className='row'>
              
@@ -197,6 +196,10 @@ function Home() {
           </div>
         </div>
        </section>
+       {/* FAQ section home  */}
+     
+       
+
     </Fragment>
   )
 }

@@ -143,8 +143,12 @@
     padding-bottom: 5%;
 }
 /* *************doctor home reviews ******************** */
-.home-doctor-services{
+.home-doctor-reviews{
     background: url(../../../public/assest/background.jpg)  fixed;
     padding: 5% 0 ;
     color: var(--light-color);
+}
+.user-icon-home{
+    font-size: 30px;
+    padding-bottom: 5px;
 }

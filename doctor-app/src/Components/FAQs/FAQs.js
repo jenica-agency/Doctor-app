@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { Fragment } from 'react';
+import FAQRight from './FAQRight';
+import dataFAQ from '../Api/dataFAQ';
 
 function FAQs() {
-  return (
-    <div>FAQs</div>
-  )
-}
 
-export default FAQs
+    const FAQs = dataFAQ;
+    console.log(FAQs);
+
+      return (
+        <Fragment>
+          <div className='container mt-5'>
+            <div className='row'>
+              <div className='FAQ-right col-lg-6 col-md-6 col-sm-12' >
+                  <FAQRight newFAQs={FAQs}>
+
+                  </FAQRight>
+              </div>
+              <div className='FAQ-left col-lg-6 col-md-6 col-sm-12'>
+
+              </div>
+            </div>
+          </div>
+        </Fragment>
+      )
+    }
+
+export default FAQs ;
+

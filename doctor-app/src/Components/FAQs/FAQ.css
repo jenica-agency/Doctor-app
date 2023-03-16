@@ -1,0 +1,6 @@
+.accordion-simple > .active{
+    display: block;
+}
+.accordion-faq .inactive{
+    display: none;
+}
