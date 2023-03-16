@@ -7,6 +7,8 @@ const statisticsRouts = require("./routes/statistics");
 const servicesRouts = require("./routes/services");
 const reserveRouts = require("./routes/reserve");
 const contactRouts = require("./routes/contact");
+const faqsRouts = require("./routes/faqs");
+const blogsRouts = require("./routes/blogs");
 
 const PORT = process.env.PORT || 6000;
 const app = express();
@@ -23,6 +25,8 @@ app.use("/statistics", statisticsRouts);
 app.use("/services", servicesRouts);
 app.use("/reserve", reserveRouts);
 app.use("/contact", contactRouts);
+app.use("/blogs", blogsRouts);
+app.use("/faqs", faqsRouts);
 
 //connect to database
 mongoose

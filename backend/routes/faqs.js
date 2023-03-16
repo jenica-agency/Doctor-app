@@ -1,5 +1,14 @@
 const express = require("express");
 
+// import Rout controller functions
+const {
+  getQuestions,
+  getQuestion,
+  createQuestion,
+  answerQuestion,
+  deleteQuestion,
+} = require("../controllers/faqsController");
+
 const router = express.Router();
 
 router.get("/", getQuestions);

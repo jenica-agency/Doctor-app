@@ -11,7 +11,6 @@ const blogContentSecSchema = new Schema(
     },
     header: { type: String, required: true },
     content: { type: String, required: true },
-    attachment: { type: String },
   },
   { timestamps: true }
 );

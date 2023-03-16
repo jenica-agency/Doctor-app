@@ -8,7 +8,7 @@ const reserveSchema = new Schema(
     email: { type: String, required: true },
     phone_num: { type: String, required: true },
     other_phone: { type: String },
-    state: { type: Boolean, required: true },
+    state: { type: Boolean, default: false },
     reserve_date: { type: Date, required: true },
   },
   { timestamps: true }
