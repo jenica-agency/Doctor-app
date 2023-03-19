@@ -152,3 +152,11 @@
     font-size: 30px;
     padding-bottom: 5px;
 }
+/* ****************doctor home FAQs ************** */
+.home-doctor-faq{
+    direction: rtl;
+    margin-top: 5%;
+}
+.btn-doctor-faq{
+    margin-bottom: 3%;
+}

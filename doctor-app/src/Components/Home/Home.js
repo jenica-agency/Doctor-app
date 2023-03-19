@@ -34,15 +34,20 @@ import BlogsFun from '../Blogs/BlogsFun';
 
 // data
 import dataBlog from '../Api/dataBlogs';
-// import FAQs from '../FAQs/FAQs';
+import FAQRight from './../FAQs/FAQRight';
+import dataFAQ from '../Api/dataFAQ';
+
 
 
 
 function Home() {
   const {t} = useTranslation();
   const Blogs = dataBlog;
+  const FAQs = dataFAQ;
+
+    // console.log(FAQs);
  
-    console.log(Blogs);
+    // console.log(Blogs);
   return (
     <Fragment>
       {/* cover section in home  */}
@@ -197,7 +202,22 @@ function Home() {
         </div>
        </section>
        {/* FAQ section home  */}
-     
+       <section className='home-doctor-faq'>
+        <div className='container'>
+          <div className='row'>
+              <div className='col-lg-6 col-md-6 col-sm-12'>
+                <h4 className='title-faq'> {t('home.FaqTitle')} </h4>
+                <p className='p-faq'> {t('home.FaqParagraph')} </p>
+                <Link to={"/FAQs"} className="btn btn-info btn-doctor-info btn-doctor-faq">
+                    {t('home.DoctorBtnReadMore')} 
+                </Link>
+              </div>
+              <div className='col-lg-6 col-md-6 col-sm-12'>
+                <FAQRight newFAQs={FAQs}></FAQRight>
+              </div>
+          </div>
+        </div>
+      </section>
        
 
     </Fragment>
