@@ -139,7 +139,7 @@ function Contact() {
                             <section className='contact-container'>
                                 <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                             
-                                <form onSubmit={handleSubmit}>
+                                <form onSubmit={handleSubmit} className='contact-form'>
 
                                   {/* user name  */}
                                     <label htmlFor="username">
@@ -203,34 +203,42 @@ function Contact() {
                                         placeholder={t('contact.contactFormPhone')}
                                     />
                                     {/* type message */}
-                                    <span> Message </span>
-                                    <input
-                                      name='type'
-                                      type = "radio"
-                                      value = "Message"
-                                      color = "primary"
-                                      onChange = {(e)=> setType(e.target.value)}
-                                     
-                                    />
-                                    <span> suggestion </span>
-                                    <input
-                                      name='type'
-                                      type = "radio"
-                                      value = "suggestion"
-                                      color = "primary"
-                                      onChange = {(e) => setType(e.target.value)}
-                                      
-                                      />
-                                    <span> complaint </span>
-                                    <input
-                                      name='type'
-                                      type = "radio"
-                                      value = "complaint"
-                                      color = "primary"
-                                      onChange = {(e) => setType(e.target.value)}
-                                     
-                                      />
-                                    
+                                    <div className='row'>
+                                        <div className='message col-4'>
+                                             <span> {t('contact.contactFormChooseMessage')} </span>
+                                              <input
+                                                name='type'
+                                                type = "radio"
+                                                value = "Message"
+                                                color = "primary"
+                                                onChange = {(e)=> setType(e.target.value)}
+                                              
+                                              />
+                                        </div>
+                                        <div className='suggestion col-4 '>
+                                             <span> {t('contact.contactFormChooseSuggestion')}</span>
+                                              <input
+                                                  name='type'
+                                                  type = "radio"
+                                                  value = "suggestion"
+                                                  color = "primary"
+                                                  onChange = {(e) => setType(e.target.value)}
+                                                  
+                                              />
+                                        </div>
+                                        <div className='complaint col-4 '>
+                                            <span> {t('contact.contactFormChooseComplaint')} </span>
+                                            <input
+                                              name='type'
+                                              type = "radio"
+                                              value = "complaint"
+                                              color = "primary"
+                                              onChange = {(e) => setType(e.target.value)}
+                                            
+                                              />
+                                        </div>
+                                    </div>
+                                   
                                     {/* user message  */}
                                   
                                     <textarea
@@ -248,7 +256,7 @@ function Contact() {
                                   
 
                                     {/* user button  */}
-                                    <button disabled={!validName || !validEmail ? true : false}>Sign Up</button>
+                                    <button disabled={!validName || !validEmail || !message ? true : false}>Sign Up</button>
                                 </form>
                             </section>
                         )}

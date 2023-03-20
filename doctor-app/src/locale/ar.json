@@ -32,7 +32,10 @@
         "contactFormName":"الأسم",
         "contactFormEmail":"البريد الأكترونى",
         "contactFormPhone":"الهاتف",
-        "contactFormMessage":"الرسالة"
+        "contactFormMessage":"الرسالة",
+        "contactFormChooseMessage":"رسالة",
+        "contactFormChooseSuggestion":"أقتراح",
+        "contactFormChooseComplaint":"شكوى"
     },
     "LogoNavName": "الدكتور",
     "LiNavLinkHome": "الرئيسية",
