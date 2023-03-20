@@ -1,0 +1,162 @@
+@import '../../index.css';
+
+/****************** cover slide home ****************/
+.home-hero{
+    margin-top: 45px;   
+    position: relative; 
+    background-image: linear-gradient(to right, var(--main-color), var(--color-one), var(--color-two) , var(--color-three));
+}
+
+.doctor-image{
+    width: 80%;
+    margin-top: 5px;
+}
+.content-home{
+    margin-top: 150px;
+}
+.title-cover-home,
+.p-cover-home,
+.doctor-name-cover-home{
+    color: var(--light-color);
+}
+.p-cover-home{
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+@media screen and (max-width : 1200px ) and (min-width: 993px) {
+    .content-home {
+        margin-top: 50px;
+    }
+}
+@media screen and (max-width : 992px) and (min-width: 768px) {
+    .content-home {
+        margin-bottom: 200px;
+        margin-top: 40px ;
+    }
+    .doctor-image{
+        width: 100%;
+    }
+}
+@media screen and (max-width : 768px) and (min-width: 300px){
+    .content-home {
+            margin-bottom: 250px;
+            margin-top: 40px;
+        }
+}
+ 
+/* svg background color  */
+.custom-shape-divider-bottom-1678534839 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    
+}
+
+.custom-shape-divider-bottom-1678534839 svg {
+    position: relative;
+    display: block;
+    width: calc(129% + 1.3px);
+    height: 352px;
+}
+
+.custom-shape-divider-bottom-1678534839 .shape-fill {
+    fill: #FFFFFF;
+}
+@media screen and (max-width: 768px) {
+    .custom-shape-divider-bottom-1678534839 svg{
+        width: calc(146% + 1.3px);
+        height: 222px;
+    }
+}
+
+/**************contact home info in home ******************************/
+.phone-home,
+.calender-home,
+.email-home,
+.address-home {
+    border-right: 1px solid var(--main-color);
+}
+
+.phone-icon-home,
+.calender-icon-home,
+.email-icon-home,
+.address-icon-home {
+    color: var(--main-color);
+    font-size: 20px;
+}
+/* **************** doctor info home pref ************************ */
+.home-doctor-info{
+    direction: rtl;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.doctor-cote-left{
+    padding-top: 7%;
+    padding-bottom: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    box-shadow:  0 0 40px 0 rgb(64 64 64 / 25%);
+    position: relative;
+}
+.p-doctor-cote{
+    text-align: right;
+    font-size: 18px;
+    line-height: 1.7;
+}
+.cote-icon-home-info{
+    color:var(--color-one);
+    font-size:70px;
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    opacity: 0.5;
+}
+.doctor-info-right{
+    padding-top: 5%;
+}
+.btn-doctor-info{
+    margin-top: 3%;
+    background-color: var(--color-two);
+    color: var(--light-color);
+}
+.btn-doctor-info:hover,
+.btn-doctor-info:focus,
+.btn-doctor-info:active,
+.btn-doctor-info:visited{
+    background-color: var(--main-color);
+    color: var(--light-color);
+}
+
+/* *******************Doctor home blogs ********************* */
+.home-doctor-Blog{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: opacity(80%);
+    -webkit-filter: opacity(80%);
+    color: var(--dark-color);
+    padding-bottom: 5%;
+}
+/* *************doctor home reviews ******************** */
+.home-doctor-reviews{
+    background: url(../../../public/assest/background.jpg)  fixed;
+    padding: 5% 0 ;
+    color: var(--light-color);
+}
+.user-icon-home{
+    font-size: 30px;
+    padding-bottom: 5px;
+}
+/* ****************doctor home FAQs ************** */
+.home-doctor-faq{
+    direction: rtl;
+    margin-top: 5%;
+}
+.btn-doctor-faq{
+    margin-bottom: 3%;
+}
