@@ -1,0 +1,30 @@
+.services{
+    color: var(--dark-color);
+    margin: 25px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    width: 70%;
+    
+}
+.service-img{
+    padding-right: 0;
+}
+.service-icon{
+    width: 100%;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+} 
+.service-desc{
+    direction: rtl;
+    padding: 2% 0;
+}
+@media screen and (max-width:576px) {
+    .service-icon {
+           border-top-right-radius: 0px;
+           border-bottom-left-radius: 25px;
+}
+}
