@@ -98,10 +98,10 @@ const deleteAdmin = async (req, res) => {
 const adminLogin = async (req, res) => {
   try {
     const admin = await Admin.findByCredentials(
-      req.body.email,
+      req.body.user,
       req.body.password
     );
-    res.status(201).json(admin);
+    res.status(200).json(admin);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
