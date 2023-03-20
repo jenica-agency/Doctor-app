@@ -60,7 +60,7 @@ const answerQuestion = async (req, res) => {
 
     const question = await Question.findByIdAndUpdate(
       { _id: id },
-      { ...req.body }
+      { ...req.body, state: true }
     );
     //check if targted service is available
     if (!question) {
