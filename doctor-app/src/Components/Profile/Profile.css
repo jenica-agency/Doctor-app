@@ -1,0 +1,49 @@
+.profile-header{
+    margin-top: 5%;
+}
+.profile-doctor-container{
+    box-shadow: 0px 13px 24px 0px rgba(0, 0, 0, 0.08);
+    padding-bottom: 25px;
+}
+.doctor-image-profile > img{
+    width: 70%;
+}
+
+.doctor-pref-profile > p{
+    text-align: right;
+    padding-right: 20px;
+    line-height: 2.2;
+}
+.space{
+    background-color: #edeff0ad;
+    text-align: right;
+    padding-right: 35px;
+    color: var(--main-color);
+}
+.doctor-profile-name{
+    color: var(--main-color);
+}
+.personal-info{
+    direction: rtl;
+    padding-right: 25px;
+    text-align: right;
+}
+.personal-info-title,
+.personal-education-title{
+    color: var(--main-color);
+    padding-bottom: 10px;
+}
+.personal-info-p{
+   line-height: 2;
+}
+.education > ul {
+    direction: rtl;
+    text-align: right;
+}
+.education>ul li{
+    padding-bottom: 10px;
+}
+.profile-doctor-content{
+    margin-top: 50px;
+   
+}
