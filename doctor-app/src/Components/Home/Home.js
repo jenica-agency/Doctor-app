@@ -36,6 +36,7 @@ import BlogsFun from '../Blogs/BlogsFun';
 import dataBlog from '../Api/dataBlogs';
 import FAQRight from './../FAQs/FAQRight';
 import dataFAQ from '../Api/dataFAQ';
+import Positive from '../Positive/Positive';
 
 
 
@@ -219,7 +220,11 @@ function Home() {
         </div>
       </section>
        {/* positive section home  */}
-        
+        <section className='home-doctor-positive'>
+            <section className='positive container'>
+                <Positive> </Positive>
+            </section>
+        </section>
     </Fragment>
   )
 }

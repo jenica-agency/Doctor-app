@@ -57,13 +57,19 @@
         
     },
     "Positive":{
-        "PositiveHeading":"اجابياتنا",
+        "PositiveHeading":"ايجابياتنا",
         "PositiveTeamHeader":"فريق مدرب",
-        "PositiveTeampref":"فريقنا الطبي مدرب علي آعلي المستويات والشهادات الطبية",
+        "PositiveTeamPref":"فريقنا الطبي مدرب علي آعلي المستويات والشهادات الطبية",
         "PositiveDoctorHeader":"الطبيب",
         "PositiveDoctorPref":"سيتم تنفيذ العلاج الخاص بك من قبل طبيب اسنان ذو خبره" ,
         "PositiveTreatmentHeader":"علاج شخصى ",
-        "PositiveTreatmentPref":"سوف تتلقى العلاج الفردي الكامل والمعد مسبقا لحالتك"
+        "PositiveTreatmentPref":"سوف تتلقى العلاج الفردي الكامل والمعد مسبقا لحالتك",
+        "PositiveMachinesHeader":"أجهزة حديثة",
+        "PositiveMachinesPref":"اجهزتنا الحديثة تمكننا من توفير أعلى جودة لطب الأسنان",
+        "PositiveChildHeader":"رعاية الأطفال",
+        "PositiveChildPref":"لدينا الكثير من العلاج لكل شيء لرعاية الأطفال",
+        "PositiveClinicHeader":"عيادة مريحة",
+        "PositiveClinicPref":"عيادتنا من العيادات الصحية والنظيفة والمريحة"
     },
     "LogoNavName": "الدكتور",
     "LiNavLinkHome": "الرئيسية",

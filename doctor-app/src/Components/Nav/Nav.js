@@ -139,7 +139,6 @@ export default class Nav extends Component {
                             <Route path="/Contact" element={<Contact/>}></Route>
                              <Route path="/Booking" element={<Booking/>}></Route>
                              <Route path="/Blogs/:id" element={<SingleBlog/>} />
-                              <Route path="/Positive" element={<Positive/>}></Route>
                      </Routes>
             </BrowserRouter>
           
