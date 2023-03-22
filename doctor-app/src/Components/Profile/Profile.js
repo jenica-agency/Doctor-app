@@ -52,6 +52,33 @@ function Profile() {
                         <li> {t('profile.DoctorProfileEducationListOne')} </li>
                       </ul>
                 </div>
+                <div className='personal-experience'>
+                  <div className='w-75'>
+                      <h4 className='personal-education-title text-end  pt-5'> {t('profile.DoctorProfileExperienceTitle')} </h4>
+                      <h5 className='personal-experience-heading'> {t('profile.DoctorProfileExperienceHeading')} </h5>
+                      <p className='personal-experience-desc'>
+                          {t('profile.DoctorProfileExperienceDesc')}
+                      </p>
+                  </div>
+                </div>
+                <div className='personal-Achievements'>
+                    <div className='w-75'>
+                        <h4 className='personal-education-title text-end pt-5'> {t('profile.DoctorProfileAchievementsTitle')} </h4>
+                        <p>
+                          {t('profile.DoctorProfileAchievementsPref')}
+                        </p>
+                        <h5>{t('profile.DoctorProfileAchievementsHeading')} </h5>
+                        <p className='pt-3'>
+                          {t('profile.DoctorProfileAchievementsDesc')}
+                        </p>
+                        <p>
+                          {t('profile.DoctorProfileAchievementsDesc')}
+                        </p>
+                        <p>
+                          {t('profile.DoctorProfileAchievementsDesc')}
+                        </p>
+                    </div>
+                </div>
              </div>
           </div>
         </section>

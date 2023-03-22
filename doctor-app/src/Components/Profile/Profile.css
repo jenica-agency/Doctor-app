@@ -23,7 +23,9 @@
 .doctor-profile-name{
     color: var(--main-color);
 }
-.personal-info{
+.personal-info,
+.personal-experience,
+.personal-Achievements{
     direction: rtl;
     padding-right: 25px;
     text-align: right;
@@ -33,7 +35,9 @@
     color: var(--main-color);
     padding-bottom: 10px;
 }
-.personal-info-p{
+.personal-info-p,
+.personal-experience-heading,
+.personal-experience-desc{
    line-height: 2;
 }
 .education > ul {
@@ -44,6 +48,5 @@
     padding-bottom: 10px;
 }
 .profile-doctor-content{
-    margin-top: 50px;
-   
+    margin-top: 50px; 
 }

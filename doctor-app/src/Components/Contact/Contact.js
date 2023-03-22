@@ -226,7 +226,7 @@ function Contact() {
                                                   
                                               />
                                         </div>
-                                        <div className='complaint col-4 '>
+                                        <div className='complaint col-4'>
                                             <span> {t('contact.contactFormChooseComplaint')} </span>
                                             <input
                                               name='type'

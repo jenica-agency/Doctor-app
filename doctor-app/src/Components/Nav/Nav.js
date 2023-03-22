@@ -13,6 +13,7 @@ import FAQs from '../FAQs/FAQs';
 import { Translation } from 'react-i18next';
 import './Nav.css';
 import SingleBlog from './../SingleBlog/SingleBlog';
+import Positive from '../Positive/Positive';
 
 
 
@@ -138,6 +139,7 @@ export default class Nav extends Component {
                             <Route path="/Contact" element={<Contact/>}></Route>
                              <Route path="/Booking" element={<Booking/>}></Route>
                              <Route path="/Blogs/:id" element={<SingleBlog/>} />
+                              <Route path="/Positive" element={<Positive/>}></Route>
                      </Routes>
             </BrowserRouter>
           
