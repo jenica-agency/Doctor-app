@@ -37,6 +37,7 @@ import dataBlog from '../Api/dataBlogs';
 import FAQRight from './../FAQs/FAQRight';
 import dataFAQ from '../Api/dataFAQ';
 import Positive from '../Positive/Positive';
+import BookingRight from '../BookingRight/BookingRight';
 
 
 
@@ -224,6 +225,19 @@ function Home() {
             <section className='positive container'>
                 <Positive> </Positive>
             </section>
+        </section>
+        {/* Booking section home  */}
+        <section className='home-doctor-booking'>
+          <div className='container'>
+            <div className='row'>
+                <div className='col-lg-6 col-md-6 col-sm-12'>
+                   <BookingRight></BookingRight>
+                </div>
+            </div>
+                <div className='col-lg-6 col-md-6 col-sm-12'>
+                  
+                </div>
+          </div>
         </section>
     </Fragment>
   )
