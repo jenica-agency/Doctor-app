@@ -1,0 +1,15 @@
+.positive{
+    margin-top: 3%;
+}
+.positive-heading{
+    text-align: end;
+    font-size: 30px;
+}
+.text-positive-head{
+    color: var(--main-color);
+    text-align: end;
+}
+.team-icon-positive{
+    font-size: 30px;
+    color: var(--main-color);
+}
