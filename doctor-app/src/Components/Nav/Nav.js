@@ -20,6 +20,7 @@ import DashServices from "../Dashboard/dashServices/DashServices";
 import DashContact from "../Dashboard/dashContact/DashContact";
 import DashFaqs from "../Dashboard/dashFaqs/DashFaqs";
 import DashReserve from "../Dashboard/dashReserve/DashReserve";
+import Footer from "../Footer/Footer";
 
 export default class Nav extends Component {
   constructor() {
@@ -158,6 +159,7 @@ export default class Nav extends Component {
           <Route path="/dashboard/contact" element={<DashContact />} />
           <Route path="/dashboard/faqs" element={<DashFaqs />} />
           <Route path="/dashboard/reserve" element={<DashReserve />} />
+          <Route path="/Footer" element={<Footer />} />
         </Routes>
       </BrowserRouter>
     );
