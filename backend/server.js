@@ -11,7 +11,7 @@ const faqsRouts = require("./routes/faqs");
 const blogsRouts = require("./routes/blogs");
 const adminRouts = require("./routes/admin");
 
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 4001;
 const app = express();
 
 //middleware
@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 
 //routes
 app.use("/statistics", statisticsRouts);
-app.use("/services", servicesRouts);
+app.use("/allservices", servicesRouts);
 app.use("/reserve", reserveRouts);
 app.use("/contact", contactRouts);
 app.use("/blogs", blogsRouts);

@@ -1,3 +1,5 @@
+import FaqForm from "./FaqForm";
+
 const DashFaqs = () => {
   return (
     <div className="blogs">
@@ -5,6 +7,7 @@ const DashFaqs = () => {
       <h2>Hi from FAQs</h2>
       <h2>Hi from FAQs</h2>
       <h2>Hi from FAQs</h2>
+      <FaqForm />
     </div>
   );
 };
