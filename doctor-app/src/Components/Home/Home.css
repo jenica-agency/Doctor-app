@@ -153,10 +153,12 @@
     padding-bottom: 5px;
 }
 /* ****************doctor home FAQs ************** */
-.home-doctor-faq{
+.home-doctor-faq,
+.home-doctor-booking{
     direction: rtl;
-    margin-top: 5%;
+    margin-top: 7%;
 }
 .btn-doctor-faq{
     margin-bottom: 3%;
 }
+/****************** doctor booking home ****************** */
