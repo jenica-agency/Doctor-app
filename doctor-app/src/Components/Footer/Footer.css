@@ -1,0 +1,71 @@
+footer{
+    margin-top: 10%;
+    background-image: url(../../images/background-footer.jpg);
+    /* opacity: 0.9; */
+}
+.footer{
+    background-color: rgba(99, 95, 95, 0.579);
+    padding-bottom: 50px;
+    color: rgb(191, 191, 191);
+}
+.upper-footer{
+    border-bottom: 1px var(--light-color) solid;
+   padding-top: 50px;
+   padding-bottom: 30px;
+}
+.icon-footer-logo{
+    text-align: start;
+}
+.text-footer-logo{
+    text-align: end;
+}
+.logo-footer-img{
+    width: 60px; 
+}
+.face-icon-footer,
+.phone-icon-footer,
+.email-icon-footer{
+    font-size: 30px;
+    padding-right: 10px;
+    color: var(--main-color);
+}
+.face-icon-footer:hover{
+    color: var(--light-color);
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    cursor: pointer;
+}
+.down-footer{
+    direction: rtl;
+}
+.info-p-footer{
+    line-height: 2;
+}
+
+.text-footer-logo,
+.title-upper-footer,
+.title-down-footer{
+    color: var(--light-color);
+}
+.btn-doctor-info-footer{
+    background-color: var(--main-color);
+    border: none;
+    color: gainsboro;
+}
+.btn-doctor-info-footer:hover
+{
+    color: var(--light-color);
+    background-color: var(--color-three);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+}
+.footer-link:hover{
+    cursor: pointer;
+    color: var(--light-color);
+}

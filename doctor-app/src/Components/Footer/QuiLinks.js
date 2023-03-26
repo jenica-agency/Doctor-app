@@ -1,17 +1,13 @@
 
 import React, { Fragment, Component } from "react";
-import MenuIcon from "@material-ui/icons/Menu";
-import CloseIcon from "@material-ui/icons/Close";
-import logo from "../../images/logo_thumbnail.png";
+
 import { NavLink } from "react-router-dom";
 
 import { Translation } from "react-i18next";
-import "./Nav.css";
 
 
 
-
-export default class Nav extends Component {
+export default class QuiLinks extends Component {
   constructor() {
     super();
     this.state = {
@@ -20,44 +16,14 @@ export default class Nav extends Component {
   }
   render() {
     return (
-    
+  
         <Fragment>
-          <nav className="navbar navbar-expand-lg navbar-light bg-light nav-content ">
-            <div className="container">
-              <NavLink className="navbar-brand " to="#/Home">
-                <img
-                  src={logo}
-                  alt="logo not found"
-                  width="35"
-                  height="25"
-                ></img>
-                <Translation>
-                  {(t) => (
-                    <span className="doctor-name">{t("LogoNavName")}</span>
-                  )}
-                </Translation>
-              </NavLink>
-              <button
-                className="navbar-toggler  menu-icon"
-                onClick={() => {
-                  this.setState({ show: !this.state.show });
-                }}
-              >
-                {this.state.show ? <MenuIcon /> : <CloseIcon />}
-              </button>
-
-              <div
-                className={
-                  this.state.show
-                    ? "collapse navbar-collapse ul-nav-content"
-                    : "collapse navbar-collapse active ul-nav-content"
-                }
-              >
-                <ul className="navbar-nav ms-auto ">
+          
+                <ul className="navbar-nav text-end">
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to={"/Home"} className="nav-link navbar-link">
+                        <NavLink to={"/Home"} className="nav-link footer-link">
                           {t("LiNavLinkHome")}
                         </NavLink>
                       </li>
@@ -69,7 +35,7 @@ export default class Nav extends Component {
                       <li className="nav-item">
                         <NavLink
                           to={"/Services"}
-                          className="nav-link navbar-link"
+                          className="nav-link footer-link"
                         >
                           {t("LiNavLinkServices")}
                         </NavLink>
@@ -80,7 +46,7 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to={"/Profile"} className="nav-link navbar-link">
+                        <NavLink to={"/Profile"} className="nav-link footer-link">
                           {t("LiNavLinkProfile")}
                         </NavLink>
                       </li>
@@ -90,7 +56,7 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to={"/Blogs"} className="nav-link navbar-link">
+                        <NavLink to={"/Blogs"} className="nav-link footer-link">
                           {t("LiNavLinkBlogs")}
                         </NavLink>
                       </li>
@@ -100,7 +66,7 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to={"/FAQs"} className="nav-link navbar-link">
+                        <NavLink to={"/FAQs"} className="nav-link footer-link">
                           {t("LiNavLinkFAQs")}
                         </NavLink>
                       </li>
@@ -110,7 +76,7 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to={"/Contact"} className="nav-link navbar-link">
+                        <NavLink to={"/Contact"} className="nav-link footer-link">
                           {t("LiNavLinkContactUs")}
                         </NavLink>
                       </li>
@@ -121,19 +87,15 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to={"/Booking"} className="nav-link navbar-link">
+                        <NavLink to={"/Booking"} className="nav-link footer-link">
                           {t("LiNavLinkBooking")}
                         </NavLink>
                       </li>
                     )}
                   </Translation>
                 </ul>
-              </div>
-            </div>
-          </nav>
         </Fragment>
-       
-     
+      
     );
   }
 }
