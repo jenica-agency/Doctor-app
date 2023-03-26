@@ -38,6 +38,7 @@ import FAQRight from './../FAQs/FAQRight';
 import dataFAQ from '../Api/dataFAQ';
 import Positive from '../Positive/Positive';
 import BookingRight from '../BookingRight/BookingRight';
+import BookingLeft from '../BookingLeft/BookingLeft';
 
 
 
@@ -233,10 +234,11 @@ function Home() {
                 <div className='col-lg-6 col-md-6 col-sm-12'>
                    <BookingRight></BookingRight>
                 </div>
-            </div>
-                <div className='col-lg-6 col-md-6 col-sm-12'>
-                  
+                <div className='col-lg-6 col-md-6 col-sm-12 my-auto'>
+                  <BookingLeft></BookingLeft>
                 </div>
+            </div>
+                
           </div>
         </section>
     </Fragment>

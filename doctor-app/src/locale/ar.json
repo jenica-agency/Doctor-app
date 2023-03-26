@@ -34,7 +34,8 @@
         "contactFormMessage":"الرسالة",
         "contactFormChooseMessage":"رسالة",
         "contactFormChooseSuggestion":"أقتراح",
-        "contactFormChooseComplaint":"شكوى"
+        "contactFormChooseComplaint":"شكوى",
+        "ContactFormBtn":"إرسال"
     },
     "profile":{
         "DoctorProfileName":"دكتور أحمد حسن وهبة ",
@@ -73,7 +74,7 @@
     },
     "BookingRight":{
         "BookingRightHeading":"دكتور أحمد حسن رسام الابتسامة ",
-         "BookingRightDesc":"فريق الدكتور أحمد حسن (رسام الابتسامة) يتكون من اطباء مدربين تدريبا عاليا ونقوم باستخدام أحدث التقنيات العلاجية لاستعادة صحة اسنانك بدون ألم بسرعة وسهولة. نحن فخورون بفرصة إعطائك ابتسامة أحلامك. نقوم باستخدام تكنولوجيا جديدة في زراعة الأسنان ، حيث لا تستغرق عملية زراعة الاسنان أكثر من 10 دقائق. سنقدم لك ابتسامة جديدة ستضيء حياتك ، ولا تغطي فمك مرة أخرى."
+         "BookingRightDesc":"فريق الدكتور أحمد حسن (رسام الابتسامة) يتكون من اطباء مدربين تدريبا عاليا ونقوم باستخدام أحدث التقنيات العلاجية لاستعادة صحة اسنانك بدون ألم بسرعة وسهولة..."
     },
     "Footer":{
         "FooterDoctorNameLogo":"الدكتور",
@@ -86,6 +87,12 @@
         "FooterAddressTwo":"شارع جمال عبد الناصر - الاسكندرية",
         "FooterAddressThree":"الازاريطة - الاسكندرية "
 
+    },
+    "Booking":{
+        "TitleCoverBooking":"أحجز موعد ",
+        "ChooseDate":"اختر موعد الحجز ",
+        "AnotherPhone":"هاتف أخر",
+        "BtnBooking":"أحجز الان"
     },
     "LogoNavName": "الدكتور",
     "LiNavLinkHome": "الرئيسية",
