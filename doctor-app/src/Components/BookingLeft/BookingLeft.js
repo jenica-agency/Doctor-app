@@ -46,9 +46,9 @@ function BookingLeft() {
  
 
   // all function
-  useEffect(() => {
-    userRef.current.focus();
-  }, []);
+  // useEffect(() => {
+  //   userRef.current.focus();
+  // }, []);
 
   useEffect(() => {
     setValidName(User_Regex.test(user));
