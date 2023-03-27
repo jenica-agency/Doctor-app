@@ -1,5 +1,7 @@
-import React, { Fragment } from "react";
-import "./Contact.css";
+import React,{Fragment} from 'react';
+import DatePicker from "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css';
+import './BookingLeft.css';
 import { useEffect, useRef, useState } from "react";
 import {
   faCheck,
@@ -8,20 +10,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "../Api/axios";
-
-// translate links
 import { useTranslation } from "react-i18next";
-
 // global variable for regex
 const User_Regex = /^[a-zA\u0600-\u06FF][a-zA \u0600-\u06FF]{1,30}$/;
-const Email_Regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
 
 const Register_URL = "localhost:6000/contact/";
+function BookingLeft() {
+      const { t } = useTranslation();
 
-function Contact() {
-  const { t } = useTranslation();
-
-  // all variable use in register form ( information about new user )
+    // all variable use in register form ( information about new user )
   const userRef = useRef();
   const errRef = useRef();
 
@@ -29,12 +27,15 @@ function Contact() {
   const [validName, setValidName] = useState(false);
   const [userFocus, setUserFocus] = useState(false);
 
-  const [Email, setEmail] = useState("");
-  const [validEmail, setValidEmail] = useState(false);
-  const [emailFocus, setEmailFocus] = useState(false);
+ 
 
   const [phone, setPhone] = useState("");
   const [phoneFocus, setPhoneFocus] = useState(false);
+
+  const [anotherPhone, setAnotherPhone] = useState("");
+  const [anotherPhoneFocus, setAnotherPhoneFocus] = useState(false);
+
+  const [selectedDate, setSelectedDate]= useState(null);
 
   const [message, setMassage] = useState("");
   const [messageFocus, setMassageFocus] = useState(false);
@@ -42,7 +43,7 @@ function Contact() {
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const [type, setType] = useState("");
+ 
 
   // all function
   useEffect(() => {
@@ -53,28 +54,26 @@ function Contact() {
     setValidName(User_Regex.test(user));
   }, [user]);
 
-  useEffect(() => {
-    setValidEmail(Email_Regex.test(Email));
-  }, [Email]);
+
 
   useEffect(() => {
     setErrMsg("");
-  }, [user, Email]);
+  }, [user]);
 
   // submit function
   const handleSubmit = async (e) => {
     e.preventDefault();
     // if button enabled with JS hack
     const v1 = User_Regex.test(user);
-    const v2 = Email_Regex.test(Email);
-    if (!v1 || !v2) {
+ 
+    if (!v1 ) {
       setErrMsg("Invalid Entry");
       return;
     }
     try {
       const response = await axios.post(
         Register_URL,
-        JSON.stringify({ user, Email, phone, type, message }),
+        JSON.stringify({ user,  phone,  message }),
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
@@ -89,10 +88,9 @@ function Contact() {
       //clear state and controlled inputs
       //need value attrib on inputs for this
       setUser("");
-      setEmail("");
       setPhone("");
       setMassage("");
-      setType();
+     
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -103,28 +101,14 @@ function Contact() {
     }
     const data = {
       userName: user,
-      userEmail: Email,
-      messageType: type,
       userPhone: phone,
       userMessage: message,
+      userDate : selectedDate
     };
     console.log(data);
   };
-
   return (
-    <Fragment>
-      <section className="content-page">
-        <div className="container">
-          <h4> {t("contact.TitleCoverContact")} </h4>
-          <div className="row">
-            <div className="contact-address col-lg-6 col-md-6 col-sm-12 my-5">
-              <h5> {t("contact.TitleAddressContact1")} </h5>
-              <p> {t("contact.contactAddressContent1")} </p>
-              <h5> {t("contact.TitleAddressContact2")} </h5>
-              <p> {t("contact.contactAddressContent2")} </p>
-            </div>
-            <div className="right col-lg-6 col-md-6 col-sm-12">
-              <Fragment>
+     <Fragment>
                 {success ? (
                   <section>
                     <h5> message send successfully .... </h5>
@@ -181,84 +165,56 @@ function Contact() {
                         <br />
                       </p>
 
-                      {/* user Email  */}
-                      <label htmlFor="Email">
-                        <FontAwesomeIcon
-                          icon={faCheck}
-                          className={validEmail ? "valid" : "hide"}
-                        />
-                        <FontAwesomeIcon
-                          icon={faTimes}
-                          className={validEmail || !Email ? "hide" : "invalid"}
-                        />
-                      </label>
+                        <div className='row'>
+                            <div className='col-lg-6 col-md-6 col-sm-12'>
+                                 {/* user phone number  */}
+                                    <input
+                                        type="text"
+                                        id="phone"
+                                        onChange={(e) => setPhone(e.target.value)}
+                                        value={phone}
+                                        required
+                                        onFocus={() => setPhoneFocus(true)}
+                                        onBlur={() => setPhoneFocus(false)}
+                                        className="input-form-contact mb-3 input-phone-contact pe-3"
+                                        placeholder={t("contact.contactFormPhone")}
+                                    />
+                            </div>
+                            <div className='col-lg-6 col-md-6 col-sm-12'>
+                                     {/* user another phone number  */}
+                                    <input
+                                        type="text"
+                                        id="anotherPhone"
+                                        onChange={(e) => setAnotherPhone(e.target.value)}
+                                        value={phone}
+                                        required
+                                        onFocus={() => setAnotherPhoneFocus(true)}
+                                        onBlur={() => setAnotherPhoneFocus(false)}
+                                        className="input-form-contact mb-3 input-phone-contact pe-3"
+                                        placeholder={t("Booking.AnotherPhone")}
+                                    />
+                            </div>
 
-                      <input
-                        type="Email"
-                        id="Email"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={Email}
-                        required
-                        aria-invalid={validEmail ? "false" : "true"}
-                        aria-describedby="Emailnote"
-                        onFocus={() => setEmailFocus(true)}
-                        onBlur={() => setEmailFocus(false)}
-                        className="input-form-contact mb-4 input-email-contact pe-3"
-                        placeholder={t("contact.contactFormEmail")}
-                      />
-
-                      {/* user phone number  */}
-                      <input
-                        type="text"
-                        id="phone"
-                        onChange={(e) => setPhone(e.target.value)}
-                        value={phone}
-                        required
-                        onFocus={() => setPhoneFocus(true)}
-                        onBlur={() => setPhoneFocus(false)}
-                        className="input-form-contact mb-3 input-phone-contact pe-3"
-                        placeholder={t("contact.contactFormPhone")}
-                      />
-                      {/* type message */}
-                      <div className="row">
-                        <div className="message col-4">
-                          <span> {t("contact.contactFormChooseMessage")} </span>
-                          <input
-                            name="type"
-                            type="radio"
-                            value="Message"
-                            color="primary"
-                            onChange={(e) => setType(e.target.value)}
-                          />
                         </div>
-                        <div className="suggestion col-4 ">
-                          <span>
-                            {" "}
-                            {t("contact.contactFormChooseSuggestion")}
-                          </span>
-                          <input
-                            name="type"
-                            type="radio"
-                            value="suggestion"
-                            color="primary"
-                            onChange={(e) => setType(e.target.value)}
-                          />
+                     
+                     
+                     {/* user date  */}
+                     <div className='row'>
+                        <div className='col-lg-6 col-md-6 col-sm-12 text-center my-auto'>
+                            <h5> {t("Booking.ChooseDate")}</h5>
                         </div>
-                        <div className="complaint col-4 ">
-                          <span>
-                            {" "}
-                            {t("contact.contactFormChooseComplaint")}{" "}
-                          </span>
-                          <input
-                            name="type"
-                            type="radio"
-                            value="complaint"
-                            color="primary"
-                            onChange={(e) => setType(e.target.value)}
-                          />
+                        <div className='col-lg-6 col-md-6 col-sm-12 text-center'>
+                             <DatePicker
+                            selected={selectedDate}
+                            onChange={date => setSelectedDate(date)}
+                            minDate={new Date()}
+                            dateFormat="dd/MM/yyyy"
+                            className='date-input'
+                           
+                            />
                         </div>
-                      </div>
-
+                     </div>
+                    
                       {/* user message  */}
 
                       <textarea
@@ -277,22 +233,17 @@ function Contact() {
                       {/* user button  */}
                       <button
                         disabled={
-                          !validName || !validEmail || !message ? true : false
+                          !validName ||  !message ? true : false
                         }
-                         className="btn-contact "
+                        className="btn-booking "
                       >
-                       {t("contact.ContactFormBtn")}
+                        {t("Booking.BtnBooking")}
                       </button>
                     </form>
                   </section>
                 )}
               </Fragment>
-            </div>
-          </div>
-        </div>
-      </section>
-    </Fragment>
-  );
+  )
 }
 
-export default Contact;
+export default BookingLeft
