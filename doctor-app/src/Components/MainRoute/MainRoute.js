@@ -15,6 +15,7 @@ import DashServices from "../Dashboard/dashServices/DashServices";
 import DashContact from "../Dashboard/dashContact/DashContact";
 import DashFaqs from "../Dashboard/dashFaqs/DashFaqs";
 import DashReserve from "../Dashboard/dashReserve/DashReserve";
+import ScrollToTop from '../ScrollToTop/ScrollToTop';
 
 
 
@@ -22,6 +23,7 @@ function MainRoute() {
   return (
   
     <Fragment> 
+      <ScrollToTop/>
          <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/Home" element={<Home />}></Route>
