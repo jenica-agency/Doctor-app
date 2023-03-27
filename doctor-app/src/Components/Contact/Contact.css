@@ -73,7 +73,7 @@
     height: 45px;
 }
 
-.btn-contact{
+.btn-contact:enabled{
     padding: 9px 32px;
     background-color: var(--main-color);
     color: var(--light-color);
@@ -83,12 +83,21 @@
         -moz-border-radius: 15px;
         -ms-border-radius: 15px;
         -o-border-radius: 15px;
-}
-.btn-contact:hover{
-    cursor: pointer;
     transform: scale(1.05);
         -webkit-transform: scale(1.05);
         -moz-transform: scale(1.05);
         -ms-transform: scale(1.05);
         -o-transform: scale(1.05);
+    cursor: pointer;
 }
+.btn-contact:disabled{
+    padding: 9px 32px;
+        background-color: gainsboro;
+        border: none;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+}
+
