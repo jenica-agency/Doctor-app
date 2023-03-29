@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import SingleService from "./SingleService";
 import "./dashServices.css";
 
-const GroubServices = () => {
+const GroupServices = () => {
   const [services, setServices] = useState([]);
 
   //fetch all services
@@ -22,7 +22,7 @@ const GroubServices = () => {
   }, []);
   console.log(services);
   return (
-    <div className="GroubServices container">
+    <div className="GroupServices ">
       {services &&
         services.map((service, index) => (
           <SingleService key={service._id} index={index} service={service} />
@@ -30,4 +30,4 @@ const GroubServices = () => {
     </div>
   );
 };
-export default GroubServices;
+export default GroupServices;

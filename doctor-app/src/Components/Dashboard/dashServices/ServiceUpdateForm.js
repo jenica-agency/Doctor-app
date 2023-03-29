@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
+// import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Alert from "react-bootstrap/Alert";
@@ -11,7 +11,7 @@ const ServiceUpdateForm = ({ service }) => {
   const [header, setHeader] = useState(service.header);
   const [brif, setBrief] = useState(service.brif);
   const [content, setContent] = useState(service.content);
-  const [attachment, setAttachment] = useState([]);
+  // const [attachment, setAttachment] = useState([]);
   const [error, setError] = useState(null);
   const [show, setShow] = useState(false);
 
@@ -68,10 +68,10 @@ const ServiceUpdateForm = ({ service }) => {
   }
 
   return (
-    <div className="ServiceForm container">
+    <div className="ServiceForm ">
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Row className="mb-3">
-          <Form.Group as={Col} md="12" controlId="validationCustom01">
+          <Form.Group md="12" controlId="validationCustom01">
             <Form.Label>Enter header of service</Form.Label>
             <Form.Control
               required
@@ -85,12 +85,11 @@ const ServiceUpdateForm = ({ service }) => {
               Please fill that field.
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="12" controlId="validationCustom02">
+          <Form.Group controlId="validationCustom02">
             <Form.Label>Enter Brief describtion</Form.Label>
             <Form.Control
               required
               as="textarea"
-              rows={3}
               placeholder="Brief describtion"
               onChange={(e) => setBrief(e.target.value)}
               value={brif}
@@ -100,12 +99,11 @@ const ServiceUpdateForm = ({ service }) => {
               Please fill that field.
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="12" controlId="validationCustom02">
+          <Form.Group controlId="validationCustom02">
             <Form.Label>Enter full content </Form.Label>
             <Form.Control
               required
               as="textarea"
-              rows={3}
               placeholder="Full content"
               onChange={(e) => setContent(e.target.value)}
               value={content}

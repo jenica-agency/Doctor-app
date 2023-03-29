@@ -10,8 +10,8 @@ import Booking from "../Booking/Booking";
 import FAQs from "../FAQs/FAQs";
 import SingleBlog from "../SingleBlog/SingleBlog";
 
-import DashBlogs from "../Dashboard/dashBlogs/DashBlogs";
-import DashServices from "../Dashboard/dashServices/DashServices";
+import MainDashboard from '../Dashboard/main/MainDashboard';
+
 import DashContact from "../Dashboard/dashContact/DashContact";
 import DashFaqs from "../Dashboard/dashFaqs/DashFaqs";
 import DashReserve from "../Dashboard/dashReserve/DashReserve";
@@ -36,8 +36,9 @@ function MainRoute() {
           <Route path="/Booking" element={<Booking />}></Route>
           <Route path="/Blogs/:id" element={<SingleBlog />} />
          
-          <Route path="/dashboard/blogs" element={<DashBlogs />} />
-          <Route path="/dashboard/services" element={<DashServices />} />
+          <Route path="/dashboard" element={<MainDashboard/>} />          
+         
+        
           <Route path="/dashboard/contact" element={<DashContact />} />
           <Route path="/dashboard/faqs" element={<DashFaqs />} />
           <Route path="/dashboard/reserve" element={<DashReserve />} />
@@ -74,6 +75,7 @@ export default MainRoute;
 // import DashFaqs from "../Dashboard/dashFaqs/DashFaqs";
 // import DashReserve from "../Dashboard/dashReserve/DashReserve";
 // // import MainRoute from './MainRoute';
+// import { Form } from 'react-bootstrap/Form';
 
 
 
