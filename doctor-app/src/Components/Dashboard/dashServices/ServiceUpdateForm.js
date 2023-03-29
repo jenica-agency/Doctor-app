@@ -70,7 +70,6 @@ const ServiceUpdateForm = ({ service }) => {
   return (
     <div className="ServiceForm container">
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <h2>Update service</h2>
         <Row className="mb-3">
           <Form.Group as={Col} md="12" controlId="validationCustom01">
             <Form.Label>Enter header of service</Form.Label>
