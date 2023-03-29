@@ -1,3 +1,6 @@
+.service-content{
+    margin-top: 10%;
+}
 .services{
     color: var(--dark-color);
     margin: 25px auto;
@@ -27,4 +30,9 @@
            border-top-right-radius: 0px;
            border-bottom-left-radius: 25px;
 }
+}
+@media screen and (max-width:768px){
+    .service-content{
+        margin-top: 23%;
+    }
 }
