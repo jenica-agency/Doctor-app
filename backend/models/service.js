@@ -7,7 +7,7 @@ const serviceSchema = new Schema(
     header: { type: String, required: true },
     brif: { type: String, required: true },
     content: { type: String, required: true },
-    attachment: { type: String, required: true },
+    attachment: { type: String },
   },
   { timestamps: true }
 );

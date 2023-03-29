@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import SingleService from "./SingleService";
 import "./dashServices.css";
+import ServiceUpdateForm from "./ServiceUpdateForm";
 
 const GroubServices = () => {
   const [services, setServices] = useState([]);
+  const [service, setService] = useState([]);
 
   //fetch all services
   useEffect(() => {
@@ -20,13 +22,16 @@ const GroubServices = () => {
     };
     fetchAllServices();
   }, []);
-
+  console.log(services);
   return (
     <div className="GroubServices container">
       {services &&
-        services.map((service) => (
-          <SingleService key={service._id} service={service} />
+        services.map((service, index) => (
+          <div>
+            <SingleService key={service._id} index={index} service={service} />
+          </div>
         ))}
+      <ServiceUpdateForm service={service} />
     </div>
   );
 };
