@@ -1,17 +1,13 @@
-import GroubServices from "./GroubServices";
+import GroupServices from "./GroupServices";
 import ServiceForm from "./ServiceForm";
-import SingleService from "./SingleService";
+// import SingleService from "./SingleService";
 
 const DashServices = () => {
   return (
     <div className="dashService">
-      <h2>Hi from Services</h2>
-      <h2>Hi from Services</h2>
-      <h2>Hi from Services</h2>
-      <h2>Hi from Services</h2>
       <ServiceForm />
       {/* <SingleService /> */}
-      <GroubServices />
+      <GroupServices />
     </div>
   );
 };

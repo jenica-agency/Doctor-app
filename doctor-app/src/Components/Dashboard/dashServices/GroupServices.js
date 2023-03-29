@@ -3,7 +3,7 @@ import SingleService from "./SingleService";
 import "./dashServices.css";
 import ServiceUpdateForm from "./ServiceUpdateForm";
 
-const GroubServices = () => {
+const GroupServices = () => {
   const [services, setServices] = useState([]);
   const [service, setService] = useState([]);
 
@@ -24,7 +24,7 @@ const GroubServices = () => {
   }, []);
   console.log(services);
   return (
-    <div className="GroubServices container">
+    <div className="GroupServices ">
       {services &&
         services.map((service, index) => (
           <div>
@@ -35,4 +35,4 @@ const GroubServices = () => {
     </div>
   );
 };
-export default GroubServices;
+export default GroupServices;
