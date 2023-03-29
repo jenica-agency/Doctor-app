@@ -21,6 +21,7 @@ const Register_URL = "localhost:6000/contact/";
 function Contact() {
   const { t } = useTranslation();
 
+
   // all variable use in register form ( information about new user )
   const userRef = useRef();
   const errRef = useRef();
@@ -67,10 +68,12 @@ function Contact() {
     // if button enabled with JS hack
     const v1 = User_Regex.test(user);
     const v2 = Email_Regex.test(Email);
+    const form = e.currentTarget;
     if (!v1 || !v2) {
       setErrMsg("Invalid Entry");
       return;
     }
+   
     try {
       const response = await axios.post(
         Register_URL,
@@ -139,7 +142,7 @@ function Contact() {
                       {errMsg}
                     </p>
 
-                    <form onSubmit={handleSubmit} className="contact-form">
+                    <form  onSubmit={handleSubmit} className="contact-form">
                       {/* user name  */}
                       <label htmlFor="username">
                         <FontAwesomeIcon
@@ -152,19 +155,21 @@ function Contact() {
                         />
                       </label>
                       <input
+                        required
                         type="text"
                         id="username"
+                        
                         placeholder={t("contact.contactFormName")}
                         ref={userRef}
                         autoComplete="off"
                         onChange={(e) => setUser(e.target.value)}
                         value={user}
-                        required
                         aria-invalid={validName ? "false" : "true"}
                         aria-describedby="uidnote"
                         onFocus={() => setUserFocus(true)}
                         onBlur={() => setUserFocus(false)}
                         className="input-form-contact mb-1 input-user-contact pe-3"
+                        
                       />
                       <p
                         id="uidnote"
@@ -279,8 +284,9 @@ function Contact() {
                         disabled={
                           !validName || !validEmail || !message ? true : false
                         }
+                         className="btn-contact "
                       >
-                        Sign Up
+                       {t("contact.ContactFormBtn")}
                       </button>
                     </form>
                   </section>

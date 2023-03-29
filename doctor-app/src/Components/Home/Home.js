@@ -31,6 +31,8 @@ import {useTranslation} from 'react-i18next';
 // page 
 import BlogsFun from '../Blogs/BlogsFun';
 
+// type write 
+import TypeWriterEffect from 'react-typewriter-effect';
 
 // data
 import dataBlog from '../Api/dataBlogs';
@@ -38,6 +40,7 @@ import FAQRight from './../FAQs/FAQRight';
 import dataFAQ from '../Api/dataFAQ';
 import Positive from '../Positive/Positive';
 import BookingRight from '../BookingRight/BookingRight';
+import BookingLeft from '../BookingLeft/BookingLeft';
 
 
 
@@ -66,7 +69,25 @@ function Home() {
                   </div>
                   <div className='cover-right col-lg-6 col-md-6 col-sm-12  content-home'>
                     <h2 className='title-cover-home'>{t('home.TitleCoverHome')}</h2>
-                    <p className='p-cover-home'> {t('home.ContentHomeParagraph')}</p>
+                    {/* <p className='p-cover-home'> {t('home.ContentHomeParagraph')}</p> */}
+
+                    <TypeWriterEffect
+                        textStyle={{
+                          fontFamily: 'Red Hat Display',
+                          color: 'var(--light-color)',
+                          fontWeight: 500,
+                          fontSize: '1.5em',
+                          direction: 'rtl'
+                        }}
+                        startDelay={100}
+                        cursorColor="var(--light-color)"
+                        multiText={[
+                          t('home.ContentHomeParagraph'),
+                          t('home.ContentHomeParagraph'),
+                        ]}
+                        multiTextDelay={1000}
+                        typeSpeed={100}
+                      />
                     <h3 className='pt-3 doctor-name-cover-home'> {t('home.DoctorNameCoverHome')}</h3>
                   </div>
               </div>
@@ -233,10 +254,11 @@ function Home() {
                 <div className='col-lg-6 col-md-6 col-sm-12'>
                    <BookingRight></BookingRight>
                 </div>
-            </div>
-                <div className='col-lg-6 col-md-6 col-sm-12'>
-                  
+                <div className='col-lg-6 col-md-6 col-sm-12 my-auto'>
+                  <BookingLeft></BookingLeft>
                 </div>
+            </div>
+                
           </div>
         </section>
     </Fragment>

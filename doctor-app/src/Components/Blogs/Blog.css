@@ -1,5 +1,6 @@
-.blog{
-   padding-top: 3%;
+
+.home-blog{
+    padding-top: 20px;
 }
 .home-blog-content{
     border-radius: 15px;
@@ -19,7 +20,6 @@
 }
 .pref-blog-home{
     direction: rtl;
-    padding: 0px 15px ;
 }
 .btn-blog-home{
     background-color: var(--color-three);

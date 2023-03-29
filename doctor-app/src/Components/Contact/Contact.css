@@ -2,16 +2,16 @@
     margin-top: 5%;
     direction: rtl;
 }
+@media screen and (max-width: 484px) {
+    .content-page{
+        margin-top: 25%;
+    }
+}
  /* contact address right  */
  .contact-address{
     text-align: start;
-     
  }
 
- /* form contact left  */
- .contact-form{
-    text-align: start;
- }
 .instructions {
     font-size: 0.75rem;
     border-radius: 0.5rem;
@@ -72,3 +72,32 @@
 .input-email-contact{
     height: 45px;
 }
+
+.btn-contact:enabled{
+    padding: 9px 32px;
+    background-color: var(--main-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+    transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        -o-transform: scale(1.05);
+    cursor: pointer;
+}
+.btn-contact:disabled{
+    padding: 9px 32px;
+        background-color: gainsboro;
+        border: none;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+}
+
