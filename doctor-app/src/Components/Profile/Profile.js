@@ -10,14 +10,14 @@ function Profile() {
 
     <Fragment>
         <section className='profile-header'>
-          <div className='profile-doctor-container container pe-0 ps-0'>
+          <div className='profile-doctor-container container-fluid '>
              <div className='row '>
                  <div className='doctor-image-profile col-lg-5 col-md-5 col-sm-12'>
-                    <img src={"assest/doctor.png"} alt='doctor pic not found '/>
+                    <img src={"assest/doctor.png"} alt='doctor pic not found ' />
                 </div>
                 <div className='doctor-pref-profile col-lg-7 col-md-7 col-sm-12 my-auto'>
                     <h3 className='doctor-profile-name'> {t('profile.DoctorProfileName')} </h3>
-                    <p className='pt-3'> 
+                    <p className='pt-3 '> 
                       {t('profile.DoctorProfilePref')}
                     </p>
                 </div>

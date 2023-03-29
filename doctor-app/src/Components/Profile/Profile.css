@@ -10,8 +10,7 @@
 }
 
 .doctor-pref-profile > p{
-    text-align: right;
-    padding-right: 20px;
+    width: 95%;
     line-height: 2.2;
 }
 .space{

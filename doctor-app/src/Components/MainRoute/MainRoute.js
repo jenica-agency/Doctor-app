@@ -19,6 +19,7 @@ import ScrollToTop from '../ScrollToTop/ScrollToTop';
 
 
 
+
 function MainRoute() {
   return (
   
@@ -40,6 +41,9 @@ function MainRoute() {
           <Route path="/dashboard/contact" element={<DashContact />} />
           <Route path="/dashboard/faqs" element={<DashFaqs />} />
           <Route path="/dashboard/reserve" element={<DashReserve />} />
+
+          
+
         </Routes>
     </Fragment>
   
