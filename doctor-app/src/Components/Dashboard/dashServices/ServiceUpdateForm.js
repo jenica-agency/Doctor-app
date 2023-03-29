@@ -6,11 +6,11 @@ import Row from "react-bootstrap/Row";
 import Alert from "react-bootstrap/Alert";
 import "./dashServices.css";
 
-const ServiceForm = () => {
+const ServiceUpdateForm = ({ service }) => {
   const [validated, setValidated] = useState(false);
-  const [header, setHeader] = useState([]);
-  const [brif, setBrief] = useState([]);
-  const [content, setContent] = useState([]);
+  const [header, setHeader] = useState(service.header);
+  const [brif, setBrief] = useState(service.brif);
+  const [content, setContent] = useState(service.content);
   const [attachment, setAttachment] = useState([]);
   const [error, setError] = useState(null);
   const [show, setShow] = useState(false);
@@ -26,13 +26,13 @@ const ServiceForm = () => {
     } else {
       e.preventDefault();
       console.log("congreatulations");
-      const newService = { header, brif, content };
-      console.log(newService);
+      const serviceUpdate = { header, brif, content };
+      console.log(serviceUpdate);
 
       //Creating my API request
-      const response = await fetch("/allservices/admin", {
-        method: "POST",
-        body: JSON.stringify(newService),
+      const response = await fetch("/allservices/admin/" + service._id, {
+        method: "PATCH",
+        body: JSON.stringify(serviceUpdate),
         headers: { "Content-Type": "application/json" },
       });
 
@@ -51,7 +51,7 @@ const ServiceForm = () => {
         setContent("");
         setValidated(false);
         setShow(true);
-        console.log("new service was added", { json });
+        console.log("the service was updated", { json });
       }
     }
   };
@@ -60,7 +60,7 @@ const ServiceForm = () => {
   if (show) {
     allert = (
       <Alert variant="success" onClose={() => setShow(false)} dismissible>
-        <Alert.Heading>Congreatulations!, the service was added</Alert.Heading>
+        <Alert.Heading>The service was updated successfully.</Alert.Heading>
       </Alert>
     );
   } else {
@@ -70,7 +70,7 @@ const ServiceForm = () => {
   return (
     <div className="ServiceForm container">
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <h2>Add new service</h2>
+        <h2>Update service</h2>
         <Row className="mb-3">
           <Form.Group as={Col} md="12" controlId="validationCustom01">
             <Form.Label>Enter header of service</Form.Label>
@@ -136,4 +136,4 @@ const ServiceForm = () => {
   );
 };
 
-export default ServiceForm;
+export default ServiceUpdateForm;

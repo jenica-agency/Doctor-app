@@ -22,7 +22,7 @@ const createService = async (req, res) => {
     const service = await Service.create({ header, brif, content, attachment });
     res.status(201).json(service);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).send({ error: error.message });
   }
 };
 
