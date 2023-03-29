@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import SingleService from "./SingleService";
 import "./dashServices.css";
-import ServiceUpdateForm from "./ServiceUpdateForm";
 
 const GroupServices = () => {
   const [services, setServices] = useState([]);
-  const [service, setService] = useState([]);
 
   //fetch all services
   useEffect(() => {
@@ -27,11 +25,8 @@ const GroupServices = () => {
     <div className="GroupServices ">
       {services &&
         services.map((service, index) => (
-          <div>
-            <SingleService key={service._id} index={index} service={service} />
-          </div>
+          <SingleService key={service._id} index={index} service={service} />
         ))}
-      <ServiceUpdateForm service={service} />
     </div>
   );
 };
