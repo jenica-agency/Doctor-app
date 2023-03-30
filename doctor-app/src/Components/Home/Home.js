@@ -42,8 +42,10 @@ import Positive from '../Positive/Positive';
 import BookingRight from '../BookingRight/BookingRight';
 import BookingLeft from '../BookingLeft/BookingLeft';
 
-
-
+// animation 
+import Aos from 'aos';
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 
 function Home() {
   const {t} = useTranslation();
@@ -53,8 +55,15 @@ function Home() {
     // console.log(FAQs);
  
     // console.log(Blogs);
+
+    useEffect(()=>{
+      Aos.init({
+        duration:1500
+      });
+    }, []);
   return (
     <Fragment>
+     
       {/* cover section in home  */}
       <section className='home-hero'>
          <div className="custom-shape-divider-bottom-1678534839">
@@ -163,24 +172,25 @@ function Home() {
           </div>
         </div>
       </section>
+       
       {/* info about doctor  */}
       <section className='home-doctor-info'>
         <div className='container'>
           <div className='row'>
-              <div className='doctor-cote-left col-lg-5 col-md-5 col-sm-12'>
-                <p className='p-doctor-cote'>
+              <div className='doctor-cote-left col-lg-5 col-md-5 col-sm-12' data-aos="fade-left">
+                <p className='p-doctor-cote' data-aos="fade-left">
                 {t('home.CoteHomeInfo')}
                 </p>
-                 <FontAwesomeIcon icon={faQuoteLeft} className = "cote-icon-home-info">
+                 <FontAwesomeIcon icon={faQuoteLeft} className = "cote-icon-home-info" >
                     </FontAwesomeIcon>
               </div>
-              <div className='doctor-info-right col-lg-7 col-md-7 col-sm-12'>
-                  <h3> {t('home.DoctorTitleInfo')} </h3>
-                  <h3>{t('home.DoctorNameInfo')}  </h3>
-                  <p className='mt-3'>
+              <div className='doctor-info-right col-lg-7 col-md-7 col-sm-12' data-aos="fade-right">
+                  <h3 data-aos="fade-right"> {t('home.DoctorTitleInfo')} </h3>
+                  <h3 data-aos="fade-right">{t('home.DoctorNameInfo')}  </h3>
+                  <p className='mt-3' data-aos="fade-right">
                     {t('home.DoctorPrefInfo')}
                   </p>
-                  <Link to={"/Profile"} className="btn btn-info btn-doctor-info">
+                  <Link to={"/Profile"} className="btn btn-info btn-doctor-info" data-aos="fade-right">
                     {t('home.DoctorBtnReadMore')} 
                   </Link>
               </div>
@@ -193,33 +203,33 @@ function Home() {
            <BlogsFun newBlogs={Blogs}></BlogsFun>
         </div>
       </section>
-      {/* services section home  */}
+      {/* reviews section home  */}
        <section className='home-doctor-reviews'>
         <div className='container'>
           <div className='row'>
              
              <div className='col-lg-4 col-md-4 col-sm-12 home-review'>
-               <FontAwesomeIcon icon={faPerson} className = "user-icon-home">
+               <FontAwesomeIcon icon={faPerson} className = "user-icon-home" data-aos="fade-right">
                     </FontAwesomeIcon>
-                <h3>5000</h3>
-                <h4> {t('home.MailHomeIcon')} </h4>
-                <p> {t('home.MailHomeDesc')} </p>
+                <h3 data-aos="fade-right">5000</h3>
+                <h4 data-aos="fade-right"> {t('home.MailHomeIcon')} </h4>
+                <p data-aos="fade-right"> {t('home.MailHomeDesc')} </p>
              </div>
 
              <div className='col-lg-4 col-md-4 col-sm-12 home-review'>
-                <FontAwesomeIcon icon={faChildDress} className = "user-icon-home">
+                <FontAwesomeIcon icon={faChildDress} className = "user-icon-home" data-aos="zoom-in">
                     </FontAwesomeIcon>
-                <h3>9000</h3>
-                <h4> {t('home.FemaleHomeIcon')} </h4>
-                <p> {t('home.FemaleHomeDesc')} </p>
+                <h3  data-aos="zoom-in">9000</h3>
+                <h4 data-aos="zoom-in"> {t('home.FemaleHomeIcon')} </h4>
+                <p data-aos="zoom-in"> {t('home.FemaleHomeDesc')} </p>
              </div>
 
              <div className='col-lg-4 col-md-4 col-sm-12 home-review'>
-                <FontAwesomeIcon icon={faPersonBreastfeeding} className = "user-icon-home">
+                <FontAwesomeIcon icon={faPersonBreastfeeding} className = "user-icon-home" data-aos="fade-left">
                     </FontAwesomeIcon>
-                <h3>10000</h3>
-                <h4> {t('home.MotherHomeIcon')} </h4>
-                <p> {t('home.MotherHomeDesc')} </p>
+                <h3 data-aos="fade-left">10000</h3>
+                <h4 data-aos="fade-left"> {t('home.MotherHomeIcon')} </h4>
+                <p data-aos="fade-left"> {t('home.MotherHomeDesc')} </p>
              </div>
           </div>
         </div>

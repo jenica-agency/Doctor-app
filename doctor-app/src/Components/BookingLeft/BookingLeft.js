@@ -186,7 +186,7 @@ function BookingLeft() {
                                         type="text"
                                         id="anotherPhone"
                                         onChange={(e) => setAnotherPhone(e.target.value)}
-                                        value={phone}
+                                        value={anotherPhone}
                                         required
                                         onFocus={() => setAnotherPhoneFocus(true)}
                                         onBlur={() => setAnotherPhoneFocus(false)}

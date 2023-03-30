@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import QuiLinks from "./QuiLinks";
 import './Footer.css';
 
+
 import logo from '../../images/logo_thumbnail.png';
 // fontawsomn links 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,14 +20,15 @@ import {
 // translate links 
 import {useTranslation} from 'react-i18next';
 
-import ScrollToTop from "react-scroll-to-top";
+
+
 
 function Footer() {
   const {t} = useTranslation();
 
   return (
-    <Fragment>
-    <ScrollToTop smooth top="20" />
+    <Fragment>  
+      
        <footer>
           <section className='footer'>
             <div className='container'>
