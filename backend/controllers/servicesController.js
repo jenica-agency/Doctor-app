@@ -69,4 +69,32 @@ const deleteService = async (req, res) => {
   }
 };
 
-module.exports = { getServices, createService, updateService, deleteService };
+///////////////////////////////////// upload image for service
+const uploadServiceImage = async (req, res) => {
+  try {
+    res.status(200).json(req.file);
+  } catch (error) {
+    res.status(400).send({ error: error.message });
+  }
+};
+/////////////////////////////////////midelware for upload images
+const multer = require("multer");
+const path = require("path");
+const fileStorge = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "images");
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + "_" + file.originalname);
+  },
+});
+const upload = multer({ storge: fileStorge });
+
+module.exports = {
+  getServices,
+  createService,
+  updateService,
+  deleteService,
+  upload,
+  uploadServiceImage,
+};

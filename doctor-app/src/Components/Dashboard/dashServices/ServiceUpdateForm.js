@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Alert from "react-bootstrap/Alert";
 import "./dashServices.css";
 
-const ServiceUpdateForm = ({ service }) => {
+const ServiceUpdateForm = ({ service, handleUpdateRerender }) => {
   const [validated, setValidated] = useState(false);
   const [header, setHeader] = useState(service.header);
   const [brif, setBrief] = useState(service.brif);
@@ -15,6 +15,10 @@ const ServiceUpdateForm = ({ service }) => {
   const [error, setError] = useState(null);
   const [show, setShow] = useState(false);
 
+  // const x = (service._id, json)=> handleUpdateRerender(service._id, json);
+  const x = (id, serviceUpdate) => {
+    handleUpdateRerender(service._id, serviceUpdate);
+  };
   const handleSubmit = async (e) => {
     //turn on validation on cells
     setValidated(true);
@@ -51,6 +55,7 @@ const ServiceUpdateForm = ({ service }) => {
         setContent("");
         setValidated(false);
         setShow(true);
+        x(service._id, serviceUpdate);
         console.log("the service was updated", { json });
       }
     }

@@ -6,6 +6,8 @@ const {
   createService,
   updateService,
   deleteService,
+  upload,
+  uploadServiceImage,
 } = require("../controllers/servicesController");
 
 const router = express.Router();
@@ -16,5 +18,10 @@ router.get("/", getServices);
 router.post("/admin/", createService);
 router.patch("/admin/:id", updateService);
 router.delete("/admin/:id", deleteService);
+router.post(
+  "/admin/upload/",
+  upload.single("serviceImage"),
+  uploadServiceImage
+);
 
 module.exports = router;
