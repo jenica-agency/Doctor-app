@@ -16,6 +16,7 @@ import DashContact from "../Dashboard/dashContact/DashContact";
 import DashFaqs from "../Dashboard/dashFaqs/DashFaqs";
 import DashReserve from "../Dashboard/dashReserve/DashReserve";
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
+import PageNotFound from '../NoteFound/PageNotFound';
 
 
 
@@ -44,7 +45,7 @@ function MainRoute() {
           <Route path="/dashboard/reserve" element={<DashReserve />} />
 
           
-
+          <Route path="*" element={<PageNotFound/>}/>
         </Routes>
     </Fragment>
   
