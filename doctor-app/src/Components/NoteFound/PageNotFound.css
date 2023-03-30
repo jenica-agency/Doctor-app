@@ -1,0 +1,28 @@
+.not-found{
+    margin-top: 7%;
+}
+.not-found > h1{
+    font-size: 200px;
+    color: var(--main-color);
+}
+.not-found > h3{
+    font-size: 90px;
+    color: var(--main-color);
+}
+.btn-error{
+    color: var(--light-color);
+    background-color: rgb(173, 12, 12);
+    border: none;
+    margin-top: 30px;
+}
+@media screen and (max-width:768px) {
+    .not-found{
+        margin-top: 18%;
+    }
+    .not-found > h1{
+       font-size: 100px;
+    }
+    .not-found > h3{
+        font-size: 70px;
+    }
+}

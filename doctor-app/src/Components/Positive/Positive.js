@@ -25,8 +25,8 @@ function Positive() {
                 <div className='col-lg-4 col-md-4 col-sm-12'>
                     <div className='row positive-content'>
                         <div className='col-9'>
-                            <h5 className='text-positive-head'>  {t('Positive.PositiveTeamHeader')} </h5>
-                            <p > {t('Positive.PositiveTeamPref')} </p>
+                            <h5 className='text-positive-head' data-aos="zoom-out-up">  {t('Positive.PositiveTeamHeader')} </h5>
+                            <p data-aos="zoom-out-up"> {t('Positive.PositiveTeamPref')} </p>
                         </div>
                         <div className='col-3 my-auto icon-positive'>
                             <FontAwesomeIcon icon={faGraduationCap} className = "team-icon-positive ">
@@ -37,8 +37,8 @@ function Positive() {
                  <div className='col-lg-4 col-md-4 col-sm-12'>
                    <div className='row positive-content'>
                         <div className='col-9'>
-                            <h5 className='text-positive-head'> {t('Positive.PositiveDoctorHeader')} </h5>
-                            <p > {t('Positive.PositiveDoctorPref')} </p>
+                            <h5 className='text-positive-head' data-aos="zoom-out-up"> {t('Positive.PositiveDoctorHeader')} </h5>
+                            <p data-aos="zoom-out-up"> {t('Positive.PositiveDoctorPref')} </p>
                         </div>
                         <div className='col-3 my-auto icon-positive'>
                             <FontAwesomeIcon icon={faCheck} className = "team-icon-positive ">
@@ -49,8 +49,8 @@ function Positive() {
                  <div className='col-lg-4 col-md-4 col-sm-12'>
                     <div className='row positive-content'>
                         <div className='col-9'>
-                             <h5 className='text-positive-head'> {t('Positive.PositiveTreatmentHeader')} </h5>
-                            <p > {t('Positive.PositiveTreatmentPref')} </p>
+                             <h5 className='text-positive-head' data-aos="zoom-out-up"> {t('Positive.PositiveTreatmentHeader')} </h5>
+                            <p data-aos="zoom-out-up"> {t('Positive.PositiveTreatmentPref')} </p>
                         </div>
                         <div className='col-3 my-auto icon-positive'>
                             <FontAwesomeIcon icon={faSuitcaseMedical} className = "team-icon-positive ">
@@ -63,8 +63,8 @@ function Positive() {
                 <div className='col-lg-4 col-md-4 col-sm-12'>
                     <div className='row'>
                         <div className='col-9'>
-                            <h5 className='text-positive-head'>  {t('Positive.PositiveMachinesHeader')} </h5>
-                            <p > {t('Positive.PositiveMachinesPref')} </p>
+                            <h5 className='text-positive-head' data-aos="zoom-in">  {t('Positive.PositiveMachinesHeader')} </h5>
+                            <p data-aos="zoom-in"> {t('Positive.PositiveMachinesPref')} </p>
                         </div>
                         <div className='col-3 my-auto icon-positive'>
                             <FontAwesomeIcon icon={faStarOfLife} className = "team-icon-positive ">
@@ -75,8 +75,8 @@ function Positive() {
                  <div className='col-lg-4 col-md-4 col-sm-12'>
                    <div className='row'>
                         <div className='col-9'>
-                            <h5 className='text-positive-head'> {t('Positive.PositiveChildHeader')} </h5>
-                            <p > {t('Positive.PositiveChildPref')} </p>
+                            <h5 className='text-positive-head' data-aos="zoom-in"> {t('Positive.PositiveChildHeader')} </h5>
+                            <p data-aos="zoom-in"> {t('Positive.PositiveChildPref')} </p>
                         </div>
                         <div className='col-3 my-auto icon-positive'>
                             <FontAwesomeIcon icon={faUsers} className = "team-icon-positive ">
@@ -87,8 +87,8 @@ function Positive() {
                  <div className='col-lg-4 col-md-4 col-sm-12'>
                     <div className='row'>
                         <div className='col-9'>
-                             <h5 className='text-positive-head'> {t('Positive.PositiveClinicHeader')} </h5>
-                            <p > {t('Positive.PositiveClinicPref')} </p>
+                             <h5 className='text-positive-head' data-aos="zoom-in"> {t('Positive.PositiveClinicHeader')} </h5>
+                            <p data-aos="zoom-in"> {t('Positive.PositiveClinicPref')} </p>
                         </div>
                         <div className='col-3 my-auto icon-positive'>
                             <FontAwesomeIcon icon={faHouseChimneyMedical} className = "team-icon-positive ">

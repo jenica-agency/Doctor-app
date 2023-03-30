@@ -14,8 +14,8 @@ const BlogsFun = ({newBlogs}) => {
                 <div className='col-lg-3 col-md-6 col-sm-12 home-blog' key={Blog.id}>
                   <div className='home-blog-content'>
                     <img src={Blog.pic} alt='blog not found' className='img-blog-home'/>
-                    <h4 className='title-blog-home mt-4 '>{Blog.title}</h4>
-                    <p className='pref-blog-home'>{Blog.description}</p>
+                    <h4 className='title-blog-home mt-4 ' data-aos="fade-down">{Blog.title}</h4>
+                    <p className='pref-blog-home'  data-aos="fade-up">{Blog.description}</p>
                     <Link to={"/Blogs/"+ Blog.id} className="btn btn-info btn-blog-home">
                       {t('home.DoctorBtnReadMore')} 
                   </Link>

@@ -68,3 +68,7 @@ footer{
     cursor: pointer;
     color: var(--light-color);
 }
+/* .btn-scrollToTop{
+    background-color: var(--main-color);
+    color: var(--light-color);
+} */

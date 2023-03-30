@@ -102,6 +102,7 @@
     padding-right: 3%;
     box-shadow:  0 0 40px 0 rgb(64 64 64 / 25%);
     position: relative;
+    overflow: hidden;
 }
 .p-doctor-cote{
     text-align: right;
@@ -118,6 +119,7 @@
 }
 .doctor-info-right{
     padding-top: 5%;
+    overflow: hidden;
 }
 .btn-doctor-info{
     margin-top: 3%;
@@ -160,5 +162,8 @@
 }
 .btn-doctor-faq{
     margin-bottom: 3%;
+}
+.home-review{
+    overflow: hidden;
 }
 /****************** doctor booking home ****************** */

@@ -1,0 +1,46 @@
+.btn-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-scrollTop{
+    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--light-color);
+    border-radius: 50%;
+    position: fixed;
+    bottom:2.5rem;
+    left: 2rem;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--main-color);
+}
+.btn-scrollTop:hover{
+    background-color: var(--color-two);
+
+}
+.top-btn-icon{
+    animation: gototop 1.2s linear infinite alternate-reverse;
+    -webkit-animation: gototop 1.2s linear infinite alternate-reverse;
+}
+  @keyframes gototop {
+      0% {
+          transform: translateY(-0.7rem);
+          -webkit-transform: translateY(-0.7rem);
+          -moz-transform: translateY(-0.7rem);
+          -ms-transform: translateY(-0.7rem);
+          -o-transform: translateY(-0.7rem);
+}
+
+      100% {
+          transform: translateY(0.5rem);
+          -webkit-transform: translateY(0.5rem);
+          -moz-transform: translateY(0.5rem);
+          -ms-transform: translateY(0.5rem);
+          -o-transform: translateY(0.5rem);
+}
+  }
