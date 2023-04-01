@@ -176,7 +176,7 @@ function Home() {
       {/* info about doctor  */}
       <section className='home-doctor-info'>
         <div className='container'>
-          <div className='row'>
+          <div className='row doctor-row-info'>
               <div className='doctor-cote-left col-lg-5 col-md-5 col-sm-12' data-aos="fade-left">
                 <p className='p-doctor-cote' data-aos="fade-left">
                 {t('home.CoteHomeInfo')}
