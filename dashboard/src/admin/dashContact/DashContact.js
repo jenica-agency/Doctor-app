@@ -1,3 +1,4 @@
+import React from "react";
 const DashContact = () => {
   return (
     <div className="blogs">

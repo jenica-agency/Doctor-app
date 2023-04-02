@@ -1,3 +1,4 @@
+import React from "react";
 const DashBlogs = () => {
   return (
     <div className="dashboard-blogs w-100">
