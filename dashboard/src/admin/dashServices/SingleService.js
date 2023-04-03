@@ -5,7 +5,11 @@ import "./dashServices.css";
 import ServiceUpdateModal from "./ServiceUpdateModal";
 import ServiceDeleteModal from "./ServiceDeleteModal";
 
-const SingleService = ({ service }) => {
+const SingleService = ({
+  service,
+  handleDeleteRerender,
+  handleUpdateRerender,
+}) => {
   const handleDelete = async () => {
     const response = await fetch("/allservices/admin/" + service._id, {
       method: "DELETE",
@@ -14,6 +18,7 @@ const SingleService = ({ service }) => {
 
     if (response.ok) {
       console.log("the service was deleted");
+      handleDeleteRerender(service._id);
     }
   };
 
@@ -46,6 +51,7 @@ const SingleService = ({ service }) => {
         show={show}
         service={service}
         handleClose={handleClose}
+        handleUpdateRerender={handleUpdateRerender}
       />
       <ServiceDeleteModal
         showDelete={showDelete}
