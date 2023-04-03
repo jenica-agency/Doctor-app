@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import SingleService from "./SingleService";
 import "./dashServices.css";
-
+import React from "react";
 const GroupServices = () => {
   const [services, setServices] = useState([]);
 

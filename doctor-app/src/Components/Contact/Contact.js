@@ -7,7 +7,7 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "../Api/axios";
+// import axios from "../Api/axios";
 
 // translate links
 import { useTranslation } from "react-i18next";
@@ -16,7 +16,7 @@ import { useTranslation } from "react-i18next";
 const User_Regex = /^[a-zA\u0600-\u06FF][a-zA \u0600-\u06FF]{1,30}$/;
 const Email_Regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-const Register_URL = "localhost:6000/contact/";
+// const Register_URL = "localhost:6000/contact/";
 
 function Contact() {
   const { t } = useTranslation();
@@ -74,45 +74,75 @@ function Contact() {
       return;
     }
    
-    try {
-      const response = await axios.post(
-        Register_URL,
-        JSON.stringify({ user, Email, phone, type, message }),
-        {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
-        }
-      );
+  //   try {
+  //     const response = await axios.post(
+  //       Register_URL,
+  //       JSON.stringify({ user, Email, phone, type, message }),
+  //       {
+  //         headers: { "Content-Type": "application/json" },
+  //         withCredentials: true,
+  //       }
+  //     );
 
-      console.log(response.data);
-      console.log(response?.data);
-      console.log(response?.accessToken);
-      console.log(JSON.stringify(response));
-      setSuccess(true);
-      //clear state and controlled inputs
-      //need value attrib on inputs for this
-      setUser("");
-      setEmail("");
-      setPhone("");
-      setMassage("");
-      setType();
-    } catch (err) {
-      if (!err?.response) {
-        setErrMsg("No Server Response");
-      } else {
-        setErrMsg("Registration Failed");
+  //     console.log(response.data);
+  //     console.log(response?.data);
+  //     console.log(response?.accessToken);
+  //     console.log(JSON.stringify(response));
+  //     setSuccess(true);
+  //     //clear state and controlled inputs
+  //     //need value attrib on inputs for this
+  //     setUser("");
+  //     setEmail("");
+  //     setPhone("");
+  //     setMassage("");
+  //     setType();
+  //   } catch (err) {
+  //     if (!err?.response) {
+  //       setErrMsg("No Server Response");
+  //     } else {
+  //       setErrMsg("Registration Failed");
+  //     }
+  //     errRef.current.focus();
+  //   }
+  //   const data = {
+  //     userName: user,
+  //     userEmail: Email,
+  //     messageType: type,
+  //     userPhone: phone,
+  //     userMessage: message,
+  //   };
+  //   console.log(data);
+    else {
+      console.log("congreatulations");
+      const newContent = { user, Email, phone, type, message };
+      console.log(newContent);
+
+      //Creating my API request
+      const response = await fetch("/allservices/admin", {
+        method: "POST",
+        body: JSON.stringify(newContent),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      //Get the request response from my API
+      const json = await response.json();
+
+      //Check if the request accepted or not
+      if (!response.ok) {
+        errMsg(response.error);
+        console.log("there is that error", response);
       }
-      errRef.current.focus();
+      if (response.ok) {
+        setErrMsg(null);
+        setUser("");
+        setPhone("");
+        setMassage("");
+        setType("");
+       
+        console.log("new service was added", { json });
+      }
     }
-    const data = {
-      userName: user,
-      userEmail: Email,
-      messageType: type,
-      userPhone: phone,
-      userMessage: message,
-    };
-    console.log(data);
-  };
+};
 
   return (
     <Fragment>

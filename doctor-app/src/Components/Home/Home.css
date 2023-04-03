@@ -133,7 +133,9 @@
     background-color: var(--main-color);
     color: var(--light-color);
 }
-
+.doctor-row-info{
+    overflow: hidden;
+}
 /* *******************Doctor home blogs ********************* */
 .home-doctor-Blog{
     background-repeat: no-repeat;

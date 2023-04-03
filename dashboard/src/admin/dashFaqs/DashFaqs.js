@@ -1,5 +1,5 @@
 import FaqForm from "./FaqForm";
-
+import React from "react";
 const DashFaqs = () => {
   return (
     <div className="blogs">
