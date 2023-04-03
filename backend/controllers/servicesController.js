@@ -17,7 +17,8 @@ const getServices = async (req, res) => {
 
 ///////////////////////////////////// create service
 const createService = async (req, res) => {
-  const { header, brif, content, attachment } = req.body;
+  const { header, brif, content } = req.body;
+  const attachment = req.file.path;
   try {
     const service = await Service.create({ header, brif, content, attachment });
     res.status(201).json(service);
@@ -72,29 +73,16 @@ const deleteService = async (req, res) => {
 ///////////////////////////////////// upload image for service
 const uploadServiceImage = async (req, res) => {
   try {
-    res.status(200).json(req.file);
+    res.status(200).json(req.file.path);
   } catch (error) {
     res.status(400).send({ error: error.message });
   }
 };
-/////////////////////////////////////midelware for upload images
-const multer = require("multer");
-const path = require("path");
-const fileStorge = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "images");
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + "_" + file.originalname);
-  },
-});
-const upload = multer({ storge: fileStorge });
 
 module.exports = {
   getServices,
   createService,
   updateService,
   deleteService,
-  upload,
   uploadServiceImage,
 };
