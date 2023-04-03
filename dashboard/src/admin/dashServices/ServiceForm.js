@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
 import Alert from "react-bootstrap/Alert";
 import "./dashServices.css";
 
@@ -25,9 +23,7 @@ const ServiceForm = () => {
       console.log("check your vaidation");
     } else {
       e.preventDefault();
-      console.log("congreatulations");
       const newService = { header, brif, content };
-      console.log(newService);
 
       //Creating my API request
       const response = await fetch("/allservices/admin", {
@@ -69,54 +65,52 @@ const ServiceForm = () => {
 
   return (
     <div className="ServiceForm ">
-             <Form noValidate validated={validated} onSubmit={handleSubmit}>
-              <h2>Add new service</h2>
-              <div className="mb-3">
-                <Form.Group   controlId="validationCustom01">
-                  <Form.Label>Enter header of service</Form.Label>
-                  <Form.Control
-                    required
-                    type="text"
-                    placeholder="Service Header"
-                    onChange={(e) => setHeader(e.target.value)}
-                    value={header}
-                  />
-                  <Form.Control.Feedback>Done!</Form.Control.Feedback>
-                  <Form.Control.Feedback type="invalid">
-                    Please fill that field.
-                  </Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group   controlId="validationCustom02">
-                  <Form.Label>Enter Brief describtion</Form.Label>
-                  <Form.Control
-                    required
-                    as="textarea"
-                  
-                    placeholder="Brief describtion"
-                    onChange={(e) => setBrief(e.target.value)}
-                    value={brif}
-                  />
-                  <Form.Control.Feedback>Done!</Form.Control.Feedback>
-                  <Form.Control.Feedback type="invalid">
-                    Please fill that field.
-                  </Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group   controlId="validationCustom02">
-                  <Form.Label>Enter full content </Form.Label>
-                  <Form.Control
-                    required
-                    as="textarea"
-                
-                    placeholder="Full content"
-                    onChange={(e) => setContent(e.target.value)}
-                    value={content}
-                  />
-                  <Form.Control.Feedback>Done!</Form.Control.Feedback>
-                  <Form.Control.Feedback type="invalid">
-                    Please fill that field.
-                  </Form.Control.Feedback>
-                </Form.Group>
-                {/* <Form.Group as={Col} md="12" controlId="validationCustom03">
+      <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        <h2>Add new service</h2>
+        <div className="mb-3">
+          <Form.Group controlId="validationCustom01">
+            <Form.Label>Enter header of service</Form.Label>
+            <Form.Control
+              required
+              type="text"
+              placeholder="Service Header"
+              onChange={(e) => setHeader(e.target.value)}
+              value={header}
+            />
+            <Form.Control.Feedback>Done!</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Please fill that field.
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group controlId="validationCustom02">
+            <Form.Label>Enter Brief describtion</Form.Label>
+            <Form.Control
+              required
+              as="textarea"
+              placeholder="Brief describtion"
+              onChange={(e) => setBrief(e.target.value)}
+              value={brif}
+            />
+            <Form.Control.Feedback>Done!</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Please fill that field.
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group controlId="validationCustom02">
+            <Form.Label>Enter full content </Form.Label>
+            <Form.Control
+              required
+              as="textarea"
+              placeholder="Full content"
+              onChange={(e) => setContent(e.target.value)}
+              value={content}
+            />
+            <Form.Control.Feedback>Done!</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Please fill that field.
+            </Form.Control.Feedback>
+          </Form.Group>
+          {/* <Form.Group as={Col} md="12" controlId="validationCustom03">
                   <Form.Label>Upload image</Form.Label>
                   <Form.Control
                     type="file"
@@ -128,12 +122,11 @@ const ServiceForm = () => {
                     Please fill that field.
                   </Form.Control.Feedback>
                 </Form.Group> */}
-              </div>
-              <Button type="submit">Confirm</Button>
-            </Form>
-            {allert}
         </div>
-      
+        <Button type="submit">Confirm</Button>
+      </Form>
+      {allert}
+    </div>
   );
 };
 
