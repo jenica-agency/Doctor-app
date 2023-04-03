@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 
-function Login() {
+function Nav() {
   return (
     <Navbar>
       <Container>
@@ -18,4 +18,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Nav;
