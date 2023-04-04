@@ -23,6 +23,7 @@ const ServiceForm = () => {
       console.log("check your vaidation");
     } else {
       e.preventDefault();
+
       const newService = { header, brif, content };
 
       //Creating my API request
