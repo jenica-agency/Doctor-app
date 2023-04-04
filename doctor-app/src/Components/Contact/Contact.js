@@ -26,15 +26,15 @@ function Contact() {
   const userRef = useRef();
   const errRef = useRef();
 
-  const [user, setUser] = useState("");
+  const [user_name, setUserName] = useState("");
   const [validName, setValidName] = useState(false);
   const [userFocus, setUserFocus] = useState(false);
 
-  const [Email, setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [validEmail, setValidEmail] = useState(false);
   const [emailFocus, setEmailFocus] = useState(false);
 
-  const [phone, setPhone] = useState("");
+  const [phone_num, setPhone] = useState("");
   const [phoneFocus, setPhoneFocus] = useState(false);
 
   const [message, setMassage] = useState("");
@@ -43,7 +43,7 @@ function Contact() {
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const [type, setType] = useState("");
+  const [message_type, setType] = useState("");
 
   // all function
   useEffect(() => {
@@ -51,74 +51,35 @@ function Contact() {
   }, []);
 
   useEffect(() => {
-    setValidName(User_Regex.test(user));
-  }, [user]);
+    setValidName(User_Regex.test(user_name));
+  }, [user_name]);
 
   useEffect(() => {
-    setValidEmail(Email_Regex.test(Email));
-  }, [Email]);
+    setValidEmail(Email_Regex.test(email));
+  }, [email]);
 
   useEffect(() => {
     setErrMsg("");
-  }, [user, Email]);
-
+  }, [user_name, email]);
+ 
   // submit function
   const handleSubmit = async (e) => {
     e.preventDefault();
     // if button enabled with JS hack
-    const v1 = User_Regex.test(user);
-    const v2 = Email_Regex.test(Email);
+    const v1 = User_Regex.test(user_name);
+    const v2 = Email_Regex.test(email);
     const form = e.currentTarget;
     if (!v1 || !v2) {
       setErrMsg("Invalid Entry");
       return;
     }
    
-  //   try {
-  //     const response = await axios.post(
-  //       Register_URL,
-  //       JSON.stringify({ user, Email, phone, type, message }),
-  //       {
-  //         headers: { "Content-Type": "application/json" },
-  //         withCredentials: true,
-  //       }
-  //     );
-
-  //     console.log(response.data);
-  //     console.log(response?.data);
-  //     console.log(response?.accessToken);
-  //     console.log(JSON.stringify(response));
-  //     setSuccess(true);
-  //     //clear state and controlled inputs
-  //     //need value attrib on inputs for this
-  //     setUser("");
-  //     setEmail("");
-  //     setPhone("");
-  //     setMassage("");
-  //     setType();
-  //   } catch (err) {
-  //     if (!err?.response) {
-  //       setErrMsg("No Server Response");
-  //     } else {
-  //       setErrMsg("Registration Failed");
-  //     }
-  //     errRef.current.focus();
-  //   }
-  //   const data = {
-  //     userName: user,
-  //     userEmail: Email,
-  //     messageType: type,
-  //     userPhone: phone,
-  //     userMessage: message,
-  //   };
-  //   console.log(data);
-    else {
-      console.log("congreatulations");
-      const newContent = { user, Email, phone, type, message };
+    try {
+      const newContent = { user_name, email, phone_num, message_type, message };
       console.log(newContent);
 
       //Creating my API request
-      const response = await fetch("/allservices/admin", {
+      const response = await fetch("/contact", {
         method: "POST",
         body: JSON.stringify(newContent),
         headers: { "Content-Type": "application/json" },
@@ -127,23 +88,41 @@ function Contact() {
       //Get the request response from my API
       const json = await response.json();
 
-      //Check if the request accepted or not
-      if (!response.ok) {
-        errMsg(response.error);
-        console.log("there is that error", response);
-      }
-      if (response.ok) {
+       setSuccess(true);
         setErrMsg(null);
-        setUser("");
+        setUserName("");
         setPhone("");
         setMassage("");
-        setType("");
-       
+        setType([]);
+        setEmail("");
         console.log("new service was added", { json });
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else {
+        setErrMsg("Registration Failed");
       }
+      errRef.current.focus();
+      setSuccess(false);
     }
-};
-
+  };
+   
+  var successMsg = {};
+  if (success) {
+    successMsg = (
+      <p
+        // ref={successRef}
+        className={success ? "successMsg" : "offscreen"}
+        aria-live="assertive"
+      >
+        message send successfully
+      </p>
+    );
+  
+  } else {
+    successMsg = <div></div>;
+  }
+ 
   return (
     <Fragment>
       <section className="content-page">
@@ -158,11 +137,11 @@ function Contact() {
             </div>
             <div className="right col-lg-6 col-md-6 col-sm-12">
               <Fragment>
-                {success ? (
+                {/* {success ? (
                   <section>
-                    <h5> message send successfully .... </h5>
+                    <h5> message send successfully</h5>
                   </section>
-                ) : (
+                ) : ( */}
                   <section className="contact-container">
                     <p
                       ref={errRef}
@@ -171,7 +150,7 @@ function Contact() {
                     >
                       {errMsg}
                     </p>
-
+                    {successMsg}
                     <form  onSubmit={handleSubmit} className="contact-form">
                       {/* user name  */}
                       <label htmlFor="username">
@@ -181,7 +160,7 @@ function Contact() {
                         />
                         <FontAwesomeIcon
                           icon={faTimes}
-                          className={validName || !user ? "hide" : "invalid"}
+                          className={validName || !user_name ? "hide" : "invalid"}
                         />
                       </label>
                       <input
@@ -192,8 +171,8 @@ function Contact() {
                         placeholder={t("contact.contactFormName")}
                         ref={userRef}
                         autoComplete="off"
-                        onChange={(e) => setUser(e.target.value)}
-                        value={user}
+                        onChange={(e) => setUserName(e.target.value)}
+                        value={user_name}
                         aria-invalid={validName ? "false" : "true"}
                         aria-describedby="uidnote"
                         onFocus={() => setUserFocus(true)}
@@ -204,7 +183,7 @@ function Contact() {
                       <p
                         id="uidnote"
                         className={
-                          userFocus && user && !validName
+                          userFocus && user_name && !validName
                             ? "instructions"
                             : "offscreen"
                         }
@@ -224,7 +203,7 @@ function Contact() {
                         />
                         <FontAwesomeIcon
                           icon={faTimes}
-                          className={validEmail || !Email ? "hide" : "invalid"}
+                          className={validEmail || !email ? "hide" : "invalid"}
                         />
                       </label>
 
@@ -232,7 +211,7 @@ function Contact() {
                         type="Email"
                         id="Email"
                         onChange={(e) => setEmail(e.target.value)}
-                        value={Email}
+                        value={email}
                         required
                         aria-invalid={validEmail ? "false" : "true"}
                         aria-describedby="Emailnote"
@@ -247,7 +226,7 @@ function Contact() {
                         type="text"
                         id="phone"
                         onChange={(e) => setPhone(e.target.value)}
-                        value={phone}
+                        value={phone_num}
                         required
                         onFocus={() => setPhoneFocus(true)}
                         onBlur={() => setPhoneFocus(false)}
@@ -320,7 +299,7 @@ function Contact() {
                       </button>
                     </form>
                   </section>
-                )}
+                {/* )} */}
               </Fragment>
             </div>
           </div>

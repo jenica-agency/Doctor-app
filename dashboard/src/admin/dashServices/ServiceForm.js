@@ -25,7 +25,7 @@ const ServiceForm = () => {
       console.log("check your vaidation");
     } else {
       e.preventDefault();
-      console.log("congreatulations");
+      // console.log("congreatulations");
       const newService = { header, brif, content };
       console.log(newService);
 

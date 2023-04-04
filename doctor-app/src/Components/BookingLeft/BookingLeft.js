@@ -15,7 +15,7 @@ import { useTranslation } from "react-i18next";
 const User_Regex = /^[a-zA\u0600-\u06FF][a-zA \u0600-\u06FF]{1,30}$/;
 
 
-const Register_URL = "localhost:6000/contact/";
+const Register_URL = "contact/";
 function BookingLeft() {
       const { t } = useTranslation();
 
@@ -23,19 +23,19 @@ function BookingLeft() {
   const userRef = useRef();
   const errRef = useRef();
 
-  const [user, setUser] = useState("");
+  const [user_name, setUser] = useState("");
   const [validName, setValidName] = useState(false);
   const [userFocus, setUserFocus] = useState(false);
 
  
 
-  const [phone, setPhone] = useState("");
+  const [phone_num, setPhone] = useState("");
   const [phoneFocus, setPhoneFocus] = useState(false);
 
-  const [anotherPhone, setAnotherPhone] = useState("");
+  const [other_phone, setAnotherPhone] = useState("");
   const [anotherPhoneFocus, setAnotherPhoneFocus] = useState(false);
 
-  const [selectedDate, setSelectedDate]= useState(null);
+  const [reserve_date, setSelectedDate]= useState(null);
 
   const [message, setMassage] = useState("");
   const [messageFocus, setMassageFocus] = useState(false);
@@ -51,20 +51,20 @@ function BookingLeft() {
   // }, []);
 
   useEffect(() => {
-    setValidName(User_Regex.test(user));
-  }, [user]);
+    setValidName(User_Regex.test(user_name));
+  }, [user_name]);
 
 
 
   useEffect(() => {
     setErrMsg("");
-  }, [user]);
+  }, [user_name]);
 
   // submit function
   const handleSubmit = async (e) => {
     e.preventDefault();
     // if button enabled with JS hack
-    const v1 = User_Regex.test(user);
+    const v1 = User_Regex.test(user_name);
  
     if (!v1 ) {
       setErrMsg("Invalid Entry");
@@ -73,7 +73,7 @@ function BookingLeft() {
     try {
       const response = await axios.post(
         Register_URL,
-        JSON.stringify({ user,  phone,  message }),
+        JSON.stringify({ user_name,  phone_num, other_phone, reserve_date, message }),
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
@@ -89,6 +89,7 @@ function BookingLeft() {
       //need value attrib on inputs for this
       setUser("");
       setPhone("");
+      setAnotherPhone("");
       setMassage("");
      
     } catch (err) {
@@ -100,10 +101,11 @@ function BookingLeft() {
       errRef.current.focus();
     }
     const data = {
-      userName: user,
-      userPhone: phone,
+      user_name: user_name,
+      phone_num: phone_num,
+      other_phone:other_phone,
       userMessage: message,
-      userDate : selectedDate
+      reserve_date : reserve_date
     };
     console.log(data);
   };
@@ -132,7 +134,7 @@ function BookingLeft() {
                         />
                         <FontAwesomeIcon
                           icon={faTimes}
-                          className={validName || !user ? "hide" : "invalid"}
+                          className={validName || !user_name ? "hide" : "invalid"}
                         />
                       </label>
                       <input
@@ -142,7 +144,7 @@ function BookingLeft() {
                         ref={userRef}
                         autoComplete="off"
                         onChange={(e) => setUser(e.target.value)}
-                        value={user}
+                        value={user_name}
                         required
                         aria-invalid={validName ? "false" : "true"}
                         aria-describedby="uidnote"
@@ -153,7 +155,7 @@ function BookingLeft() {
                       <p
                         id="uidnote"
                         className={
-                          userFocus && user && !validName
+                          userFocus && user_name && !validName
                             ? "instructions"
                             : "offscreen"
                         }
@@ -172,7 +174,7 @@ function BookingLeft() {
                                         type="text"
                                         id="phone"
                                         onChange={(e) => setPhone(e.target.value)}
-                                        value={phone}
+                                        value={phone_num}
                                         required
                                         onFocus={() => setPhoneFocus(true)}
                                         onBlur={() => setPhoneFocus(false)}
@@ -186,7 +188,7 @@ function BookingLeft() {
                                         type="text"
                                         id="anotherPhone"
                                         onChange={(e) => setAnotherPhone(e.target.value)}
-                                        value={anotherPhone}
+                                        value={other_phone}
                                         required
                                         onFocus={() => setAnotherPhoneFocus(true)}
                                         onBlur={() => setAnotherPhoneFocus(false)}
@@ -205,7 +207,7 @@ function BookingLeft() {
                         </div>
                         <div className='col-lg-6 col-md-6 col-sm-12 text-center'>
                              <DatePicker
-                            selected={selectedDate}
+                            selected={reserve_date}
                             onChange={date => setSelectedDate(date)}
                             minDate={new Date()}
                             dateFormat="dd/MM/yyyy"
@@ -233,7 +235,7 @@ function BookingLeft() {
                       {/* user button  */}
                       <button
                         disabled={
-                          !validName ||  !message ? true : false
+                          !validName || !phone_num || !reserve_date? true : false
                         }
                         className="btn-booking "
                       >
