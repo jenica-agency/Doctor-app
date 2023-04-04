@@ -17,16 +17,16 @@ const getReservations = async (req, res) => {
 
 ///////////////////////////////////// create reservation
 const createReservation = async (req, res) => {
-  const { user_name, email, phone_num, other_phone, state, reserve_date } =
+  const { user_name, phone_num, other_phone, state, reserve_date, message } =
     req.body;
   try {
     const reservation = await Reservation.create({
       user_name,
-      email,
       phone_num,
       other_phone,
       state,
       reserve_date,
+      message,
     });
     res.status(201).json(reservation);
   } catch (error) {
