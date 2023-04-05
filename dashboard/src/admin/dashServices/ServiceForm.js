@@ -24,6 +24,7 @@ const ServiceForm = () => {
       console.log("check your vaidation");
     } else {
       e.preventDefault();
+
       const newService = { header, brif, content, attachment };
       const formData = new FormData();
 

@@ -10,11 +10,7 @@ import Booking from "../Booking/Booking";
 import FAQs from "../FAQs/FAQs";
 import SingleBlog from "../SingleBlog/SingleBlog";
 
-import MainDashboard from '../Dashboard/main/MainDashboard';
 
-import DashContact from "../Dashboard/dashContact/DashContact";
-import DashFaqs from "../Dashboard/dashFaqs/DashFaqs";
-import DashReserve from "../Dashboard/dashReserve/DashReserve";
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
 import PageNotFound from '../NoteFound/PageNotFound';
 
@@ -37,12 +33,7 @@ function MainRoute() {
           <Route path="/Booking" element={<Booking />}></Route>
           <Route path="/Blogs/:id" element={<SingleBlog />} />
          
-          <Route path="/dashboard" element={<MainDashboard/>} />          
          
-        
-          <Route path="/dashboard/contact" element={<DashContact />} />
-          <Route path="/dashboard/faqs" element={<DashFaqs />} />
-          <Route path="/dashboard/reserve" element={<DashReserve />} />
 
           
           <Route path="*" element={<PageNotFound/>}/>
