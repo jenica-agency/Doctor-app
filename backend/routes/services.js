@@ -16,13 +16,13 @@ const router = express.Router();
 // assign controller functions to them Routs
 
 router.get("/", getServices);
-router.post("/admin/", uploadServiceImg.single("serviceImage"), createService);
+router.post("/admin/", uploadServiceImg.single("attachment"), createService);
 router.patch("/admin/:id", updateService);
 router.delete("/admin/:id", deleteService);
-router.post(
-  "/admin/upload/",
-  uploadServiceImg.single("serviceImage"),
-  uploadServiceImage
-);
+// router.post(
+//   "/admin/upload/",
+//   uploadServiceImg.single("attachment"),
+//   uploadServiceImage
+// );
 
 module.exports = router;

@@ -6,10 +6,11 @@ import "./dashServices.css";
 
 const ServiceForm = () => {
   const [validated, setValidated] = useState(false);
-  const [header, setHeader] = useState([]);
-  const [brif, setBrief] = useState([]);
-  const [content, setContent] = useState([]);
-  const [attachment, setAttachment] = useState([]);
+  const [header, setHeader] = useState("");
+  const [brif, setBrief] = useState("");
+  const [content, setContent] = useState("");
+  const [attachment, setAttachment] = useState("");
+  const [attstring, setAttstring] = useState("");
   const [error, setError] = useState(null);
   const [show, setShow] = useState(false);
 
@@ -23,12 +24,21 @@ const ServiceForm = () => {
       console.log("check your vaidation");
     } else {
       e.preventDefault();
-      const newService = { header, brif, content };
+      const newService = { header, brif, content, attachment };
+      const formData = new FormData();
+
+      formData.append("header", "header");
+      formData.append("brif", brif);
+      formData.append("content", content);
+      formData.append("attachment", attachment);
+
+      console.log("there is that object", newService);
+      console.log("there is that formdata", formData);
 
       //Creating my API request
       const response = await fetch("/allservices/admin", {
         method: "POST",
-        body: JSON.stringify(newService),
+        body: JSON.stringify(formData),
         headers: { "Content-Type": "application/json" },
       });
 
@@ -47,7 +57,11 @@ const ServiceForm = () => {
         setContent("");
         setValidated(false);
         setShow(true);
+        setAttachment("");
+        setAttstring("");
+
         console.log("new service was added", { json });
+        console.log(attachment);
       }
     }
   };
@@ -65,7 +79,12 @@ const ServiceForm = () => {
 
   return (
     <div className="ServiceForm ">
-      <Form noValidate validated={validated} onSubmit={handleSubmit}>
+      <Form
+        noValidate
+        validated={validated}
+        onSubmit={handleSubmit}
+        encType="multipart/form-data"
+      >
         <h2>Add new service</h2>
         <div className="mb-3">
           <Form.Group controlId="validationCustom01">
@@ -110,18 +129,22 @@ const ServiceForm = () => {
               Please fill that field.
             </Form.Control.Feedback>
           </Form.Group>
-          {/* <Form.Group as={Col} md="12" controlId="validationCustom03">
-                  <Form.Label>Upload image</Form.Label>
-                  <Form.Control
-                    type="file"
-                    onChange={(e) => setAttachment(e.target.value)}
-                    value={attachment}
-                  />
-                  <Form.Control.Feedback>Done!</Form.Control.Feedback>
-                  <Form.Control.Feedback type="invalid">
-                    Please fill that field.
-                  </Form.Control.Feedback>
-                </Form.Group> */}
+          <Form.Group md="12" controlId="validationCustom03">
+            <Form.Label>Upload image</Form.Label>
+            <Form.Control
+              type="file"
+              filename="attachment"
+              onChange={(e) => {
+                setAttachment(e.target.files[0]);
+                setAttstring(e.target.value);
+              }}
+              value={attstring}
+            />
+            <Form.Control.Feedback>Done!</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Please fill that field.
+            </Form.Control.Feedback>
+          </Form.Group>
         </div>
         <Button type="submit">Confirm</Button>
       </Form>

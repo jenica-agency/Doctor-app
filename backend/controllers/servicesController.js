@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 
+//import port from env
+const PORT = process.env.PORT || 4001;
+
 // Import DB Model & make a DB colliction object
 const Service = require("../models/service");
 
@@ -15,10 +18,13 @@ const getServices = async (req, res) => {
   }
 };
 
+//"http://localhost:" + PORT + "/" +
 ///////////////////////////////////// create service
 const createService = async (req, res) => {
   const { header, brif, content } = req.body;
-  const attachment = req.file.path;
+
+  const attachment = req.file ? req.file.path : "";
+
   try {
     const service = await Service.create({ header, brif, content, attachment });
     res.status(201).json(service);
