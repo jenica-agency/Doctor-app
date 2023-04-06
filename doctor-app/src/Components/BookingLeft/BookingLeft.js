@@ -15,7 +15,7 @@ import { useTranslation } from "react-i18next";
 const User_Regex = /^[a-zA\u0600-\u06FF][a-zA \u0600-\u06FF]{1,30}$/;
 
 
-const Register_URL = "contact/";
+const Register_URL = "reserve/";
 function BookingLeft() {
       const { t } = useTranslation();
 

@@ -30,12 +30,13 @@ import {
 import {useTranslation} from 'react-i18next';
 // page 
 import BlogsFun from '../Blogs/BlogsFun';
+import BlogModel from '../Blogs/BlogsModel';
 
 // type write 
 import TypeWriterEffect from 'react-typewriter-effect';
 
 // data
-import dataBlog from '../Api/dataBlogs';
+// import dataBlog from '../Api/dataBlogs';
 import FAQRight from './../FAQs/FAQRight';
 import dataFAQ from '../Api/dataFAQ';
 import Positive from '../Positive/Positive';
@@ -47,9 +48,11 @@ import Aos from 'aos';
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
 
+
+
 function Home() {
   const {t} = useTranslation();
-  const Blogs = dataBlog;
+  const {Blogs} = BlogModel("/blogs/");  
   const FAQs = dataFAQ;
 
     // console.log(FAQs);
@@ -200,7 +203,7 @@ function Home() {
       {/* blog section home  */}
       <section className='home-doctor-Blog '>
         <div className='container'>
-           <BlogsFun newBlogs={Blogs}></BlogsFun>
+          <BlogsFun NewBlogs={Blogs}></BlogsFun>
         </div>
       </section>
       {/* reviews section home  */}
