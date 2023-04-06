@@ -94,7 +94,12 @@
         "AnotherPhone":"هاتف أخر",
         "BtnBooking":"أحجز الان"
     },
-    "LogoNavName": "الدكتور",
+    "FAQs":{
+        "FAQFormTitle":"أسأل و أستشير دكتورة هالة صلاح ",
+        "FAQFormDesc":"تقوم دكتور هالة بمتابعة اسألتكم و الرد عليكم بعناية , الدكتور حريصة جد على الرد عليكم بنفسها لذلك لا تتردد فى اخبارنا سؤالك ",
+        "FAQFormQuestion":"ضع سؤالك وسوف يتم عليكم الرد فى أقرب وقت "
+    },
+    "LogoNavName": "د / هالة صلاح ",
     "LiNavLinkHome": "الرئيسية",
     "LiNavLinkServices": "الخدمات ",
     "LiNavLinkProfile":"الملف الشخصى ",

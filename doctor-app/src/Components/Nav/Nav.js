@@ -2,7 +2,7 @@
 import React, { Fragment, Component } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
-import logo from "../../images/logo_thumbnail.png";
+import logo from "../../images/logo-doctor.png";
 import {  NavLink } from "react-router-dom";
 
 import { Translation } from "react-i18next";

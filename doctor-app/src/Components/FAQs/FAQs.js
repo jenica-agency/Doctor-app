@@ -3,6 +3,7 @@ import FAQRight from './FAQRight';
 import FAQLeft from './FAQLeft';
 import dataFAQ from '../Api/dataFAQ';
 import './FAQ.css';
+import FormFAQ from './FAQForm/FormFAQ';
 
 function FAQs() {
 
@@ -11,6 +12,7 @@ function FAQs() {
 
       return (
         <Fragment>
+          <FormFAQ></FormFAQ>
           <div className='container faq-container'>
             <div className='row '>
               <div className='FAQ-right col-lg-6 col-md-6 col-sm-12' >

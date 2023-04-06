@@ -1,0 +1,20 @@
+.Form-faqs{
+    text-align: right;
+    direction: rtl;
+    margin-top: 7%;
+}
+@media screen and (max-width:991px) and (min-width:767px) {
+    .Form-faqs{
+        margin-top: 12%;
+    }
+}
+@media screen and (max-width:768px) and (min-width:575px) {
+    .Form-faqs {
+        margin-top: 15%;
+    }
+}
+@media screen and (max-width:575px)  {
+    .Form-faqs {
+        margin-top: 20%;
+    }
+}
