@@ -23,14 +23,18 @@
 } 
 .service-desc{
     direction: rtl;
-    padding: 2% 0;
 }
 @media screen and (max-width:576px) {
     .service-icon {
            border-top-right-radius: 0px;
            border-bottom-left-radius: 25px;
+        }
+    .service-img{
+        padding-left: 0
+        ;
+    }
 }
-}
+
 @media screen and (max-width:768px){
     .service-content{
         margin-top: 23%;
