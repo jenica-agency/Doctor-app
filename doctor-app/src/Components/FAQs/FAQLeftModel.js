@@ -15,7 +15,7 @@ const FAQLeftModel = (url)=>{
                     data=>{
                         console.log(data);
                         
-                        setBlogs(data);
+                        setFAQs(data);
                         
                     })
                 .catch(er => {

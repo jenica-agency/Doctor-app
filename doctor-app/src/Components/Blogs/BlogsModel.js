@@ -1,10 +1,11 @@
-import { useState , useEffect} from "react"
+import { useState , useEffect } from "react";
 
-const BlogModel = (url)=>{
-    const [blogs, setBlogs] = useState(null);
+const BlogModel = ( url )=>{
 
-    useEffect(()=>{
-        setTimeout(()=>{
+    const [isWaiting ,setIsWaiting ] = useState(true); 
+    const [Blogs, setBlogs] = useState([]);
+    const getData = ()=>{
+         setTimeout(()=>{
              fetch(url)
                 .then(
                     res => {
@@ -13,17 +14,23 @@ const BlogModel = (url)=>{
                     })
                 .then(
                     data=>{
+                        setIsWaiting(false); 
+                        setBlogs( data);
                         console.log(data);
-                        
-                        setBlogs(data);
-                        
                     })
                 .catch(er => {
                     console.log(er.message);
                 });
         }, 1000);
+     };
+  
+useEffect(() => {
+    getData();
+}, [url]);
        
-    },[url]);
-    return blogs;
+return {Blogs , isWaiting} ;
+
+
 }
+
 export default BlogModel;

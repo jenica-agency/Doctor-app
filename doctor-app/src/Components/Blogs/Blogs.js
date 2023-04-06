@@ -1,17 +1,18 @@
 import React from 'react'
 import BlogsFun from './BlogsFun';
-import dataBlogs from '../Api/dataBlogs';
+import BlogsModel from "./BlogsModel";
 
 function Blogs() {
 
-  const Blogs = dataBlogs;
-  console.log(Blogs);
+ const {Blogs, isWaiting} = BlogsModel("/blogs/");  
+
+//  console.log(Blogs);
   return (
     <div className='container mt-5 blog'>
-
-      <BlogsFun newBlogs ={Blogs}>
-
+      <BlogsFun NewBlogs ={Blogs}>
       </BlogsFun>
+       {isWaiting && <h1> please wait loading data ..... </h1>}
+
     </div>
   )
 }

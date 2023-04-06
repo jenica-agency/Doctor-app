@@ -3,11 +3,10 @@ import React, { Fragment, Component } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import logo from "../../images/logo_thumbnail.png";
-import { NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 
 import { Translation } from "react-i18next";
 import "./Nav.css";
-
 
 
 
@@ -20,9 +19,8 @@ export default class Nav extends Component {
   }
   render() {
     return (
-    
-        <Fragment>
-          <nav className="navbar navbar-expand-lg navbar-light bg-light nav-content ">
+    <Fragment>
+                  <nav className="navbar navbar-expand-lg navbar-light bg-light nav-content ">
             <div className="container">
               <NavLink className="navbar-brand " to="#/Home">
                 <img
@@ -57,7 +55,7 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to={"/Home"} className="nav-link navbar-link">
+                        <NavLink to="/Home" className="nav-link navbar-link">
                           {t("LiNavLinkHome")}
                         </NavLink>
                       </li>
@@ -68,7 +66,7 @@ export default class Nav extends Component {
                     {(t) => (
                       <li className="nav-item">
                         <NavLink
-                          to={"/Services"}
+                          to= "/Services"
                           className="nav-link navbar-link"
                         >
                           {t("LiNavLinkServices")}
@@ -80,7 +78,7 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to={"/Profile"} className="nav-link navbar-link">
+                        <NavLink to= "/Profile" className="nav-link navbar-link">
                           {t("LiNavLinkProfile")}
                         </NavLink>
                       </li>
@@ -90,7 +88,7 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to={"/Blogs"} className="nav-link navbar-link">
+                        <NavLink to= "/Blogs" className="nav-link navbar-link">
                           {t("LiNavLinkBlogs")}
                         </NavLink>
                       </li>
@@ -100,7 +98,7 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to={"/FAQs"} className="nav-link navbar-link">
+                        <NavLink to= "/FAQs" className="nav-link navbar-link">
                           {t("LiNavLinkFAQs")}
                         </NavLink>
                       </li>
@@ -110,7 +108,7 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to={"/Contact"} className="nav-link navbar-link">
+                        <NavLink to="/Contact" className="nav-link navbar-link">
                           {t("LiNavLinkContactUs")}
                         </NavLink>
                       </li>
@@ -121,7 +119,7 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to={"/Booking"} className="nav-link navbar-link">
+                        <NavLink to="/Booking" className="nav-link navbar-link">
                           {t("LiNavLinkBooking")}
                         </NavLink>
                       </li>
@@ -131,9 +129,7 @@ export default class Nav extends Component {
               </div>
             </div>
           </nav>
-        </Fragment>
-       
-     
+    </Fragment>
     );
   }
 }
