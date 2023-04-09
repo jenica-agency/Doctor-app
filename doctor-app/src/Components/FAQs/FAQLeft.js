@@ -8,7 +8,7 @@ import { faAngleDown ,
          faAngleUp 
         } from '@fortawesome/free-solid-svg-icons';
 
-function FAQLeft({newFAQs}) {
+function FAQLeft({newFAQ}) {
 
   const [Accordion, setAccordion]= useState(-1);
 
@@ -22,11 +22,11 @@ function FAQLeft({newFAQs}) {
   return (
     <Fragment>
       <div className='accordion-faq'>
-        {newFAQs.map((FAQ, index) => (
+        {newFAQ.map((FAQ, index) => (
          <button key={index} onClick={() => accordionToggle(index)} className='accordion-faq-content '>
             <div  className='row'>
               <div className='accordion-faq-heading col-10'>
-                <h5 className={Accordion === index ? "active" :""}> {FAQ.question}</h5>
+                <h5 className={Accordion === index ? "active" :""}> {FAQ.user_question}</h5>
               </div>
               <span className='accordion-faq-icons col-2 '>
                 {
