@@ -9,10 +9,9 @@ import FAQRightModel from './FAQRightModel';
 
 function FAQs() {
 
-    const FAQsLeft = FAQLeftModel("/faqs/");
+    // const FAQsLeft = FAQLeftModel("/faqs/");
     const FAQsRight = FAQRightModel("/faqs/");
-    console.log(FAQs);
-
+   
       return (
         <Fragment>
           <FormFAQ></FormFAQ>

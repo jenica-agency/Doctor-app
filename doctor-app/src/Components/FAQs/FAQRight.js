@@ -8,6 +8,7 @@ import { faAngleDown ,
          faAngleUp 
         } from '@fortawesome/free-solid-svg-icons';
 
+
 function FAQRight({newFAQs}) {
 
   const [Accordion, setAccordion]= useState(-1);

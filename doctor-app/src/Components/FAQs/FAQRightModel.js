@@ -2,20 +2,22 @@ import { useState , useEffect} from "react"
 
 const FAQRightModel = (url)=>{
     const [FAQs, setFAQs] = useState(null);
+    
 
     useEffect(()=>{
         setTimeout(()=>{
              fetch(url)
                 .then(
                     res => {
-                        console.log(res);
                         return res.json();
                     })
                 .then(
                     data=>{
                         console.log(data);
-                        
-                        setFAQs(data);
+                         const answered = data.filter((faq) => {
+                            return faq.state === true;
+                            });
+                        setFAQs(answered);
                         
                     })
                 .catch(er => {
@@ -24,6 +26,8 @@ const FAQRightModel = (url)=>{
         }, 1000);
        
     },[url]);
+   
     return FAQs;
 }
+
 export default FAQRightModel;
