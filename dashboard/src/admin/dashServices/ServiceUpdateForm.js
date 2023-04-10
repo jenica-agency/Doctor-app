@@ -104,7 +104,7 @@ const ServiceUpdateForm = ({ service, handleUpdateRerender }) => {
               Please fill that field.
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group controlId="validationCustom02">
+          <Form.Group controlId="validationCustom03">
             <Form.Label>Enter full content </Form.Label>
             <Form.Control
               required
