@@ -5,7 +5,7 @@ import { useState } from "react";
 import FaqUpdateModal from "./FaqUpdateModal";
 import FaqDeleteModal from "./FaqDeleteModal";
 
-const SingleFaq = ({ faq, index }) => {
+const SingleFaq = ({ faq, index, handleDelete, stateControl }) => {
   //update modal
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const handleCloseUpdateModal = () => setShowUpdateModal(false);
@@ -35,10 +35,14 @@ const SingleFaq = ({ faq, index }) => {
             modalState={showUpdateModal}
             handleClose={handleCloseUpdateModal}
             faq={faq}
+            stateControl={stateControl}
           />
           <FaqDeleteModal
             modalState={showDeleteModal}
             handleClose={handleCloseDeleteModal}
+            handleDelete={handleDelete}
+            id={faq._id}
+            stateControl={stateControl}
           />
         </div>
       </Accordion.Body>

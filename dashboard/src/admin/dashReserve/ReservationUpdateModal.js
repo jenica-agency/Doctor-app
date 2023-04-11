@@ -2,35 +2,24 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-function FaqDeleteModal({
-  modalState,
-  handleClose,
-  handleDelete,
-  id,
-  stateControl,
-}) {
+function ReservationUpdateModal({ modalState, handleClose, handleUpdate }) {
   return (
     <Modal show={modalState} onHide={() => handleClose()} centered={true}>
       <Modal.Header closeButton>
-        <Modal.Title>حذف سؤال</Modal.Title>
+        <Modal.Title>مراجعة حجز</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>هل أنت متأكد ؟</h4>
+        <h5>هل أنت متأكد أنك قمت بالمراجعة ؟</h5>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={() => handleClose()}>
           إلغاء
         </Button>
-        <Button
-          variant="danger"
-          onClick={() => {
-            handleDelete(id);
-          }}
-        >
-          حذف
+        <Button variant="success" onClick={handleUpdate}>
+          تأكيد
         </Button>
       </Modal.Footer>
     </Modal>
   );
 }
-export default FaqDeleteModal;
+export default ReservationUpdateModal;

@@ -1,21 +1,21 @@
-import React from 'react';
-import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
-import Row from 'react-bootstrap/Row';
-import Tab from 'react-bootstrap/Tab';
-import { Container } from 'react-bootstrap';
+import React from "react";
+import Col from "react-bootstrap/Col";
+import Nav from "react-bootstrap/Nav";
+import Row from "react-bootstrap/Row";
+import Tab from "react-bootstrap/Tab";
+import { Container } from "react-bootstrap";
 
-import DashBlogs from '../dashBlogs/DashBlogs';
-import DashServices from '../dashServices/DashServices';
-import DashContact from '../dashContact/DashContact';
-import DashFaqs from '../dashFaqs/DashFaqs';
-import DashReserve from '../dashReserve/DashReserve';
-import { Fragment } from 'react';
-import './mainDashboard.css';
+import DashBlogs from "../dashBlogs/DashBlogs";
+import DashServices from "../dashServices/DashServices";
+import DashContact from "../dashContact/DashContact";
+import DashFaqs from "../dashFaqs/DashFaqs";
+import DashReserve from "../dashReserve/DashReserve";
+import { Fragment } from "react";
+import "./mainDashboard.css";
 function MainDashboard() {
   return (
     <Fragment>
-      <Container className='left-tap-dash'>
+      <Container className="left-tap-dash">
         <Tab.Container id="left-tabs-example" defaultActiveKey="DashBlogs">
           <Row>
             <Col sm={3}>
@@ -59,9 +59,7 @@ function MainDashboard() {
           </Row>
         </Tab.Container>
       </Container>
-         
     </Fragment>
-   
   );
 }
 
