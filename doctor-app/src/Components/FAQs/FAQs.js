@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 import FAQRight from './FAQRight';
-import FAQLeft from './FAQLeft';
-// import dataFAQ from '../Api/dataFAQ';
+// import FAQLeft from './FAQLeft';
+
 import './FAQ.css';
 import FormFAQ from './FAQForm/FormFAQ';
-import FAQLeftModel from './FAQLeftModel';
+// import FAQLeftModel from './FAQLeftModel';
 import FAQRightModel from './FAQRightModel';
 
 function FAQs() {

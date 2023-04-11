@@ -132,8 +132,8 @@ function Contact() {
             <div className="contact-address col-lg-6 col-md-6 col-sm-12 my-5">
               <h5> {t("contact.TitleAddressContact1")} </h5>
               <p> {t("contact.contactAddressContent1")} </p>
-              <h5> {t("contact.TitleAddressContact2")} </h5>
-              <p> {t("contact.contactAddressContent2")} </p>
+             
+              
             </div>
             <div className="right col-lg-6 col-md-6 col-sm-12">
               <Fragment>

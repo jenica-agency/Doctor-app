@@ -4,17 +4,16 @@ import QuiLinks from "./QuiLinks";
 import './Footer.css';
 
 
-import logo from '../../images/logo_thumbnail.png';
+import logo from '../../images/logo-doctor.png';
 // fontawsomn links 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare,
-          faInstagramSquare,
-          faTwitterSquare,
         } from '@fortawesome/free-brands-svg-icons';
 import {
            faSquarePhoneFlip,
            faEnvelope,
-           faLocationDot
+           faLocationDot,
+           faTicket
         } from '@fortawesome/free-solid-svg-icons'
 
 // translate links 
@@ -39,7 +38,7 @@ function Footer() {
                           <div className='row'>
                             
                              <div className='text-footer-logo col-9 '>
-                                <h5> {t('Footer.FooterDoctorNameLogo')} </h5>
+                                <h5 className='pt-2'> {t('LogoNavName')} </h5>
                               </div>
                               <div className='icon-footer-logo col-3  pe-0'>
                                   <img src={logo}  alt='logo not found' className='logo-footer-img'/>
@@ -57,7 +56,7 @@ function Footer() {
                                   </FontAwesomeIcon>
                               </div>
                               <p>
-                                0125623987452 - 013456203648
+                                01006989857  -  01156528242
                               </p>
                           </div>
                     </div>
@@ -73,7 +72,8 @@ function Footer() {
                                   </FontAwesomeIcon>
                               </div>
                               <p >
-                                InformationEmail813@gmail.com 
+                                halasalah202@gmail.com
+                                Drhalasalah@info.com
                               </p>
                           </div>
                     
@@ -81,12 +81,16 @@ function Footer() {
                    
                     <div className='links col-lg-3 col-md-3 col-sm-6 '>
                           
-                      <FontAwesomeIcon icon={faFacebookSquare} className = "face-icon-footer">
-                    </FontAwesomeIcon>
-                      <FontAwesomeIcon icon={faInstagramSquare} className = "face-icon-footer">
-                    </FontAwesomeIcon> 
-                    <FontAwesomeIcon icon={faTwitterSquare} className = "face-icon-footer">
-                    </FontAwesomeIcon> 
+                      
+                        <a href='https://www.facebook.com/DentalBay.BayElite' target='_blank'>
+                          <FontAwesomeIcon icon={faFacebookSquare} className = "face-icon-footer">
+                            </FontAwesomeIcon> 
+                        </a>
+                       <a href='https://app.vezeeta.com/zorLwrGxstHaKbA18' target='_blank'>
+                          <FontAwesomeIcon icon={faTicket} className = "face-icon-footer">
+                            </FontAwesomeIcon> 
+                        </a>
+                     
                     </div>
 
               </div>
@@ -108,7 +112,7 @@ function Footer() {
                       <h5 className='text-end title-down-footer pe-4'> {t('Footer.FooterAddress')} </h5>
                       <div className='row'>
                             <div className='icon-home col-2 text-start'>
-                                <FontAwesomeIcon icon={faLocationDot} className = "address-icon-home">
+                                <FontAwesomeIcon icon={faLocationDot} className = "address-icon-footer">
                                 </FontAwesomeIcon>
                             </div>
                             <div className='text-home col-10 text-end pe-0'>
@@ -117,28 +121,8 @@ function Footer() {
                                </p>
                             </div>
                       </div>
-                      <div className='row'>
-                            <div className='icon-home col-2 text-start'>
-                                <FontAwesomeIcon icon={faLocationDot} className = "address-icon-home">
-                                </FontAwesomeIcon>
-                            </div>
-                            <div className='text-home col-10 text-end pe-0'>
-                               <p>
-                                  {t('Footer.FooterAddressTwo')}
-                               </p>
-                            </div>
-                      </div>
-                      <div className='row'>
-                            <div className='icon-home col-2 text-start'>
-                                <FontAwesomeIcon icon={faLocationDot} className = "address-icon-home">
-                                </FontAwesomeIcon>
-                            </div>
-                            <div className='text-home col-10 text-end pe-0'>
-                               <p>
-                                  {t('Footer.FooterAddressThree')}
-                               </p>
-                            </div>
-                      </div>
+                      
+                     
                   </div>
                   <div className='col-lg-3 col-md-3 col-sm-12'>
                         

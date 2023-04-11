@@ -22,7 +22,11 @@ export default class Nav extends Component {
     <Fragment>
                   <nav className="navbar navbar-expand-lg navbar-light bg-light nav-content ">
             <div className="container">
-              <NavLink className="navbar-brand " to="#/Home">
+              <NavLink className="navbar-brand " to="#/Home"
+                    style={({ isActive }) => ({
+                          color: isActive ? "#d16fac" : '#6e4498',
+                        })}
+                  >
                 <img
                   src={logo}
                   alt="logo not found"
@@ -34,6 +38,7 @@ export default class Nav extends Component {
                     <span className="doctor-name">{t("LogoNavName")}</span>
                   )}
                 </Translation>
+                
               </NavLink>
               <button
                 className="navbar-toggler  menu-icon"
@@ -55,7 +60,13 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to="/Home" className="nav-link navbar-link">
+                        <NavLink 
+                            to="/Home" 
+                            className="nav-link navbar-link"
+                            style={({ isActive }) => ({
+                              color: isActive ? "#d16fac" : '#6e4498',
+                            })}
+                          >
                           {t("LiNavLinkHome")}
                         </NavLink>
                       </li>
@@ -68,6 +79,9 @@ export default class Nav extends Component {
                         <NavLink
                           to= "/Services"
                           className="nav-link navbar-link"
+                          style={({ isActive }) => ({
+                          color: isActive ? "#d16fac" : '#6e4498',
+                          })}
                         >
                           {t("LiNavLinkServices")}
                         </NavLink>
@@ -78,8 +92,15 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to= "/Profile" className="nav-link navbar-link">
-                          {t("LiNavLinkProfile")}
+                        <NavLink 
+                            to= "/Profile"
+                            className="nav-link navbar-link"
+                            style={({ isActive }) => ({
+                              color: isActive ? "#d16fac" : '#6e4498',
+                            })}
+                         >
+                            {t("LiNavLinkProfile")}
+                             
                         </NavLink>
                       </li>
                     )}
@@ -88,8 +109,14 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to= "/Blogs" className="nav-link navbar-link">
-                          {t("LiNavLinkBlogs")}
+                        <NavLink 
+                          to= "/Blogs" 
+                          className="nav-link navbar-link"
+                          style={({ isActive }) => ({
+                          color: isActive ? "#d16fac" : '#6e4498',
+                          })}
+                          >
+                           {t("LiNavLinkBlogs")}
                         </NavLink>
                       </li>
                     )}
@@ -98,7 +125,13 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to= "/FAQs" className="nav-link navbar-link">
+                        <NavLink 
+                          to= "/FAQs"
+                           className="nav-link navbar-link"
+                           style={({ isActive }) => ({
+                              color: isActive ? "#d16fac" : '#6e4498',
+                            })}
+                            >
                           {t("LiNavLinkFAQs")}
                         </NavLink>
                       </li>
@@ -108,7 +141,12 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to="/Contact" className="nav-link navbar-link">
+                        <NavLink 
+                        to="/Contact" 
+                        className="nav-link navbar-link"
+                        style={({ isActive }) => ({
+                              color: isActive ? "#d16fac" : '#6e4498',
+                            })}>
                           {t("LiNavLinkContactUs")}
                         </NavLink>
                       </li>
@@ -119,7 +157,13 @@ export default class Nav extends Component {
                   <Translation>
                     {(t) => (
                       <li className="nav-item">
-                        <NavLink to="/Booking" className="nav-link navbar-link">
+                        <NavLink 
+                          to="/Booking" 
+                          className="nav-link navbar-link"
+                          style={({ isActive }) => ({
+                              color: isActive ? "#d16fac" : '#6e4498',
+                            })}
+                            >
                           {t("LiNavLinkBooking")}
                         </NavLink>
                       </li>
