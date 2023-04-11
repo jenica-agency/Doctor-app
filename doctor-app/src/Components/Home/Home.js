@@ -31,17 +31,18 @@ import {useTranslation} from 'react-i18next';
 // page 
 import BlogsFun from '../Blogs/BlogsFun';
 import BlogModel from '../Blogs/BlogsModel';
+import FAQRight from '../FAQs/FAQRight';
+import FAQsModelHome from './FAQsModelHome';
 
 // type write 
 import TypeWriterEffect from 'react-typewriter-effect';
 
 // data
 // import dataBlog from '../Api/dataBlogs';
-import FAQRight from './../FAQs/FAQRight';
-import dataFAQ from '../Api/dataFAQ';
 import Positive from '../Positive/Positive';
 import BookingRight from '../BookingRight/BookingRight';
 import BookingLeft from '../BookingLeft/BookingLeft';
+
 
 // animation 
 import Aos from 'aos';
@@ -50,21 +51,19 @@ import { useEffect } from 'react';
 
 
 
+
 function Home() {
   const {t} = useTranslation();
   const {Blogs} = BlogModel("/blogs/");  
-  const FAQs = dataFAQ;
-
-    // console.log(FAQs);
+  const FAQsData = FAQsModelHome("/faqs/");
  
-    // console.log(Blogs);
-
     useEffect(()=>{
       Aos.init({
         duration:1500
       });
     }, []);
   return (
+    
     <Fragment>
      
       {/* cover section in home  */}
@@ -81,7 +80,7 @@ function Home() {
                   </div>
                   <div className='cover-right col-lg-6 col-md-6 col-sm-12  content-home'>
                     <h2 className='title-cover-home'>{t('home.TitleCoverHome')}</h2>
-                    {/* <p className='p-cover-home'> {t('home.ContentHomeParagraph')}</p> */}
+                 
 
                     <TypeWriterEffect
                         textStyle={{
@@ -114,14 +113,15 @@ function Home() {
               <div className='row'>
                 
                 <div className='text-home col-9 text-end pe-0'>
-                  <span> (+ 02) - 01298745621</span>
+                  <span>{t('home.PhoneHomeTitle')} </span>
                 </div>
                 <div className='icon-home col-3 text-start'>
                     <FontAwesomeIcon icon={faSquarePhoneFlip} className = "phone-icon-home">
                     </FontAwesomeIcon>
                 </div>
                 <p>
-                  0125623987452 - 013456203648
+                  	- 01006989857 <br/>
+                    - 01156528242
                 </p>
               </div>
             </div>
@@ -152,7 +152,8 @@ function Home() {
                     </FontAwesomeIcon>
                 </div>
                 <p>
-                  infoEmail @ Email.com
+                 halasalah202@gmail.com 
+                 Drhalasalah@info.com
                 </p>
               </div>
             </div>
@@ -249,7 +250,7 @@ function Home() {
                 </Link>
               </div>
               <div className='col-lg-6 col-md-6 col-sm-12'>
-                <FAQRight newFAQs={FAQs}></FAQRight>
+                <FAQRight newFAQs={FAQsData}></FAQRight>
               </div>
           </div>
         </div>

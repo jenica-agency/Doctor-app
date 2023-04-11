@@ -29,7 +29,7 @@ const BlogsFun = ({NewBlogs}) => {
                     <img src={blog.attachment} alt='blog not found' className='img-blog-home'/>
                     <h4 className='title-blog-home mt-4 ' data-aos="fade-down">{blog.header}</h4>
                     <p className='pref-blog-home'  data-aos="fade-up">{blog.brif}</p>
-                    <Link to={"/Blogs/"+ blog.id} className="btn btn-info btn-blog-home">
+                    <Link to={`/Blogs/${blog._id}`} className="btn btn-info btn-blog-home">
                       {t('home.DoctorBtnReadMore')} 
                   </Link>
                   </div>

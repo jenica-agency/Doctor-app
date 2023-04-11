@@ -1,11 +1,11 @@
 footer{
     margin-top: 5%;
-    background-image: url(../../images/background-footer.jpg);
+    background-color: var(--main-color);
 }
 .footer{
     background-color: rgba(99, 95, 95, 0.579);
     padding-bottom: 50px;
-    color: rgb(191, 191, 191);
+    color: var(--light-color)
 }
 .upper-footer{
     border-bottom: 1px var(--light-color) solid;
@@ -14,6 +14,9 @@ footer{
 }
 .icon-footer-logo{
     text-align: start;
+}
+.address-icon-footer{
+    color: var(--color-two);
 }
 .text-footer-logo{
     text-align: end;
@@ -26,7 +29,7 @@ footer{
 .email-icon-footer{
     font-size: 30px;
     padding-right: 10px;
-    color: var(--main-color);
+    color: var(--color-two);
 }
 .face-icon-footer:hover{
     color: var(--light-color);
@@ -50,14 +53,14 @@ footer{
     color: var(--light-color);
 }
 .btn-doctor-info-footer{
-    background-color: var(--main-color);
+    background-color: var(--color-two);
     border: none;
     color: gainsboro;
 }
 .btn-doctor-info-footer:hover
 {
     color: var(--light-color);
-    background-color: var(--color-three);
+    background-color: var(--color-two);
     transform: scale(1.02);
     -webkit-transform: scale(1.02);
     -moz-transform: scale(1.02);

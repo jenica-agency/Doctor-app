@@ -41,14 +41,13 @@ function BookingLeft() {
   const [messageFocus, setMassageFocus] = useState(false);
 
   const [errMsg, setErrMsg] = useState("");
+
   const [success, setSuccess] = useState(false);
 
  
 
   // all function
-  // useEffect(() => {
-  //   userRef.current.focus();
-  // }, []);
+ 
 
   useEffect(() => {
     setValidName(User_Regex.test(user_name));
@@ -71,27 +70,27 @@ function BookingLeft() {
       return;
     }
     try {
-      const response = await axios.post(
-        Register_URL,
-        JSON.stringify({ user_name,  phone_num, other_phone, reserve_date, message }),
-        {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
-        }
-      );
+      const newReserve = { user_name, phone_num, other_phone, reserve_date, message };
+      console.log(newReserve);
 
-      console.log(response.data);
-      console.log(response?.data);
-      console.log(response?.accessToken);
-      console.log(JSON.stringify(response));
-      setSuccess(true);
-      //clear state and controlled inputs
-      //need value attrib on inputs for this
-      setUser("");
-      setPhone("");
-      setAnotherPhone("");
-      setMassage("");
-     
+      //Creating my API request
+      const response = await fetch("/reserve", {
+        method: "POST",
+        body: JSON.stringify(newReserve),
+        headers: { "Content-Type": "application/json" },
+      });
+
+ //Get the request response from my API
+      const json = await response.json();
+
+       setSuccess(true);
+        setErrMsg(null);
+        setUser("");
+        setPhone("");
+        setAnotherPhone("");
+        setMassage("");
+       
+        console.log("reserve successfully", { json });
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -99,23 +98,29 @@ function BookingLeft() {
         setErrMsg("Registration Failed");
       }
       errRef.current.focus();
+      setSuccess(false);
     }
-    const data = {
-      user_name: user_name,
-      phone_num: phone_num,
-      other_phone:other_phone,
-      userMessage: message,
-      reserve_date : reserve_date
-    };
-    console.log(data);
   };
+    var successMsg = {};
+  if (success) {
+    successMsg = (
+      <p
+        // ref={successRef}
+        className={success ? "successMsg" : "offscreen"}
+        aria-live="assertive"
+      >
+        message send successfully
+      </p>
+    );
+  
+  } else {
+    successMsg = <div></div>;
+  }
+ 
   return (
      <Fragment>
-                {success ? (
-                  <section>
-                    <h5> message send successfully .... </h5>
-                  </section>
-                ) : (
+      
+                
                   <section className="contact-container">
                     <p
                       ref={errRef}
@@ -124,7 +129,7 @@ function BookingLeft() {
                     >
                       {errMsg}
                     </p>
-
+                     {successMsg}
                     <form onSubmit={handleSubmit} className="contact-form">
                       {/* user name  */}
                       <label htmlFor="username">
@@ -137,6 +142,7 @@ function BookingLeft() {
                           className={validName || !user_name ? "hide" : "invalid"}
                         />
                       </label>
+                      
                       <input
                         type="text"
                         id="username"
@@ -217,6 +223,7 @@ function BookingLeft() {
                         </div>
                      </div>
                     
+                    
                       {/* user message  */}
 
                       <textarea
@@ -243,7 +250,7 @@ function BookingLeft() {
                       </button>
                     </form>
                   </section>
-                )}
+               
               </Fragment>
   )
 }

@@ -1,6 +1,6 @@
 import { useState , useEffect} from "react"
 
-const FAQRightModel = (url)=>{
+const FAQsModelHome = (url)=>{
     const [FAQs, setFAQs] = useState(null);
     
 
@@ -13,11 +13,13 @@ const FAQRightModel = (url)=>{
                     })
                 .then(
                     data=>{
-                        console.log(data);
-                         const answered = data.filter((faq) => {
+                        console.log(data); //all data 
+                         const answered = data.filter( faq => {
                             return faq.state === true;
                             });
-                        setFAQs(answered);
+                         console.log(answered); 
+                         const FirstThreeFAQ = answered.slice(0,3);
+                        setFAQs(FirstThreeFAQ);
                         
                     })
                 .catch(er => {
@@ -30,4 +32,4 @@ const FAQRightModel = (url)=>{
     return FAQs;
 }
 
-export default FAQRightModel;
+export default FAQsModelHome;
