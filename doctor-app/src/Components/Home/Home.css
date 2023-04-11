@@ -125,6 +125,7 @@
     margin-top: 3%;
     background-color: var(--color-two);
     color: var(--light-color);
+    border: none;
 }
 .btn-doctor-info:hover,
 .btn-doctor-info:focus,
@@ -148,7 +149,9 @@
 }
 /* *************doctor home reviews ******************** */
 .home-doctor-reviews{
-    background: url(../../../public/assest/background.jpg)  fixed;
+    background: url(../../images/reviews-background2.jpg)  fixed ;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 5% 0 ;
     color: var(--light-color);
 }

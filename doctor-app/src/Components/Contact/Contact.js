@@ -7,7 +7,7 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import axios from "../Api/axios";
+
 
 // translate links
 import { useTranslation } from "react-i18next";
@@ -22,7 +22,7 @@ function Contact() {
   const { t } = useTranslation();
 
 
-  // all variable use in register form ( information about new user )
+  // all variable use in contact form 
   const userRef = useRef();
   const errRef = useRef();
 

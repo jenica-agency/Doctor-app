@@ -11,11 +11,11 @@ code {
     monospace;
 }
 :root {
-  --main-color: #1d96a1;
-  --color-one: #4ec7a4;
-  --color-two: #00b1a9;
-  --color-three: #2ea7a2;
-  --dark-color: #2C3333;
-  --light-color: #FFFFFF;
+  --main-color: #6e4498;
+  --color-one: #a65687;
+  --color-two: #d16fac;
+  --color-three: #f366d9;
+  --dark-color: #222;
+  --light-color: #fcfcfc;
 
 }

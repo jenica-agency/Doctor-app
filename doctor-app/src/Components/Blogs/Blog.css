@@ -25,7 +25,7 @@
     direction: rtl;
 }
 .btn-blog-home{
-    background-color: var(--color-three);
+    background-color: var(--main-color);
     color: var(--light-color);
     border:none;
 

@@ -1,12 +1,14 @@
-import { useState , useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const BlogModel = ( url )=>{
+const ServicesModel =(url)=>{
 
     const [isWaiting ,setIsWaiting ] = useState(true); 
-    const [Blogs, setBlogs] = useState([]);
-   
-    useEffect(()=>{
-         setTimeout(()=>{
+
+     const [services, setServices]= useState( []);
+
+
+     useEffect(()=>{
+        setTimeout(()=>{
              fetch(url)
                 .then(
                     res => {
@@ -15,19 +17,20 @@ const BlogModel = ( url )=>{
                     })
                 .then(
                     data=>{
-                        setIsWaiting(false); 
-                        setBlogs( data);
                         console.log(data);
+                        setIsWaiting(false); 
+                        setServices(data);
+                        
                     })
                 .catch(er => {
                     console.log(er.message);
                 });
         }, 1000);
-    }, [url]);
        
-return {Blogs , isWaiting} ;
+    },[url]);
 
+
+return { services, isWaiting}
 
 }
-
-export default BlogModel;
+export default ServicesModel;
