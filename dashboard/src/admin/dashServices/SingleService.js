@@ -35,7 +35,7 @@ const SingleService = ({
   return (
     <div>
       <Card className="card" style={{ width: "25rem" }}>
-        <Card.Img variant="top" src={service.attachment} />
+        <Card.Img variant="top" src={service.attachment} alt="service image" />
         <Card.Body>
           <Card.Title>{service.header}</Card.Title>
           <Card.Text>{service.brif}</Card.Text>

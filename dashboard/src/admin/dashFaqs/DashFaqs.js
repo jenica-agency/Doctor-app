@@ -26,13 +26,36 @@ const DashFaqs = () => {
     return faq.state === false;
   });
 
+  const handleDelete = async (id) => {
+    const response = await fetch("/faqs/admin/" + id, {
+      method: "DELETE",
+    });
+    // const json = await response.json();
+
+    if (response.ok) {
+      console.log("the FAQ was deleted");
+      const updatedFaqs = faqs.filter((faq) => {
+        return faq._id !== id;
+      });
+      setFaqs(updatedFaqs);
+    }
+  };
+
   return (
     <div className="blogs">
       <h2>الأسئلةالأكثر شيوعاَ</h2>
       <h4>الأسئلة الغير مجاب عنها</h4>
-      <GroupFaqs faqs={notAnswerd} />
+      <GroupFaqs
+        faqs={notAnswerd}
+        handleDelete={handleDelete}
+        stateControl={{ faqs, setFaqs }}
+      />
       <h4>الأسئلةالمجاب عنها</h4>
-      <GroupFaqs faqs={answerd} />
+      <GroupFaqs
+        faqs={answerd}
+        handleDelete={handleDelete}
+        stateControl={{ faqs, setFaqs }}
+      />
     </div>
   );
 };
