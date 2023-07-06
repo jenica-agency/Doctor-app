@@ -1,45 +1,75 @@
 
-import React, { Fragment } from 'react'
+import React ,{useState , useEffect }from 'react';
+// import { useParams } from 'react-router-dom';
+// import './SingleBlog.css';
+// import BlogModel from '../BlogsModel';
+// import SingleBlogFun from './SingleBlogFun';
+// // import axios from 'axios';
+// const SingleBlog = ({url}) => {
+//     const {_id} = useParams();
+//     console.log(_id);    
+//     const {BlogData} = BlogModel("/blogs/"+_id);  
+//     console.log(BlogData);
+  
+//     const [blog, setBlog] = useState({});
+
+//   useEffect(() => {
+//     const fetchBlog = async () => {
+//       const response = await fetch(`http://localhost:4001/blogs/${_id}`);
+//       const data = await response.json();
+//       setBlog(data);
+//     };
+//     fetchBlog();
+//   }, [url]);
+
+//   // const { header, brif } = blog;
+// console.log(blog);
+//     return (
+//     <SingleBlogFun NewBlog={blog}>
+//     </SingleBlogFun>
+  
+//     //  <div>
+//     //   <h2>{blog.blog.header}</h2>
+//     //   <p>{blog.blog.brif}</p>
+//     // </div>
+//   )
+// }
+
+// export default SingleBlog
+
 import { useParams } from 'react-router-dom';
-import './SingleBlog.css';
 
-
-// import img from '../../images/blog-imag-1.jpg'
-
-
-import BlogModel from '../BlogsModel';
-
-function SingleBlog() {
-    const {_id} = useParams();
-   
-    // console.log(Blogs);
-    console.log(_id);    
-    const {blog} = BlogModel("/blogs/"+_id);  
-   
-    console.log(blog);
+function SingleBlog(id) {
+      const [data, setBlog] = useState({});
+  const { _id } = useParams();
+  // const selectedObject = objects.find(object => object._id === parseInt(_id));
+console.log(_id)
+  useEffect(() => {
+    const fetchBlog = async () => {
+      const response = await fetch(`http://localhost:4001/blogs/${_id}`);
+      const data = await response.json();
+      setBlog(data);
+    };
+    fetchBlog();
+  }, [id]);
+  // console.log(data.blog.header)
+   const myObject = { name: "data.header", age: 30 };
   return (
-    <Fragment>
-       {blog && (
-                <section className='single-blog-header'>
-                    <div className='container'>
-                        <div className='row'>
-                            <div className='img-single-blog-left col-lg-5 col-md-6 col-sm-12'>
-                                <img src={blog.attachment} alt='blog not found' className='img-blog-home'/>
-                            </div>
-                            <div className='content-single-blog-right col-lg-7 col-md-6 col-sm-12'>
-                                <h3 className='pt-5'> {blog.header} </h3>
-                                <h5> {blog.brif}</h5>
-                                <p> {blog.content} </p>
-                            </div>
-
-                        </div>
-                    </div>
-                </section>
-       )}
-     
-    </Fragment>
-    
-  )
+      <div>
+      {data.blog ? (
+        <div>
+          <p>ID: {data.blog._id}</p>
+          <p>Header: {data.blog.header}</p>
+          <p>Brief: {data.blog.brif}</p>
+          <p>Attachment: {data.blog.attachment}</p>
+           <p>Header: {data.blog.header}</p>
+      
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
 }
 
-export default SingleBlog
+export default SingleBlog;

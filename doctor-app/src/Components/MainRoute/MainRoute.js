@@ -12,7 +12,9 @@ import ScrollToTop from '../ScrollToTop/ScrollToTop';
 import PageNotFound from '../NoteFound/PageNotFound';
 import Blogs from '../Blogs/Blogs';
 
+
 import FormFAQ from '../FAQs/FAQForm/FormFAQ';
+import BlogsHome from '../Home/BlogsHome';
 
 
 
@@ -28,12 +30,14 @@ function MainRoute() {
           <Route path="/Home" element={<Home />}></Route>
           <Route path="/Services" element={<Services />}></Route>
           <Route path="/Profile" element={<Profile />}></Route>
-          <Route path="/Blogs" element={<Blogs />}></Route>
+          <Route path="/Blogs" element={<Blogs></Blogs>}></Route>
+           <Route path="/BlogsHome" element={<BlogsHome></BlogsHome>}></Route>
           <Route path="/FAQs" element={<FAQs />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>
           <Route path="/Booking" element={<Booking />}></Route>
-          <Route path="/Blogs/:_id" element={<SingleBlog />} />   
-         
+          <Route path="/Blogs/:_id" element={<SingleBlog />} /> 
+
+       
          <Route path="FormFAQ" element={<FormFAQ></FormFAQ>} />  
           <Route path="*" element={<PageNotFound/>}/>
           

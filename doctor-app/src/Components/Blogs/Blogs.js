@@ -1,17 +1,17 @@
 import React from 'react'
 import BlogsFun from './BlogsFun';
-import BlogsModel from "./BlogsModel";
+import BlogModel from "./BlogsModel";
 
 function Blogs() {
 
- const {Blogs, isWaiting} = BlogsModel("/blogs/");  
+ const {BlogData} = BlogModel("/blogs/");  
 
-//  console.log(Blogs);
+//  console.log(BlogData);
   return (
     <div className='container mt-5 blog'>
-      <BlogsFun NewBlogs ={Blogs}>
+      <BlogsFun NewBlogs ={BlogData}>
       </BlogsFun>
-       {isWaiting && <h1> please wait loading data ..... </h1>}
+       
 
     </div>
   )
