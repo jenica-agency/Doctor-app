@@ -29,8 +29,9 @@ import {
 // translate links 
 import {useTranslation} from 'react-i18next';
 // page 
-import BlogsFun from '../Blogs/BlogsFun';
-import BlogModel from '../Blogs/BlogsModel';
+
+
+
 import FAQRight from '../FAQs/FAQRight';
 import FAQsModelHome from './FAQsModelHome';
 
@@ -49,13 +50,18 @@ import Aos from 'aos';
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
 
+import BlogsHome from './BlogsHome';
+import BlogsFunHome from './BlogsFunHome';
+import BlogsModelHome from './BlogsModelHome';
+
 
 
 
 function Home() {
   const {t} = useTranslation();
-  const {Blogs} = BlogModel("/blogs/");  
+
   const FAQsData = FAQsModelHome("/faqs/");
+  const BlogsData = BlogsModelHome("/blogs/");
  
     useEffect(()=>{
       Aos.init({
@@ -204,7 +210,8 @@ function Home() {
       {/* blog section home  */}
       <section className='home-doctor-Blog '>
         <div className='container'>
-          <BlogsFun NewBlogs={Blogs}></BlogsFun>
+         {/* <BlogsFunHome NewBlog={BlogsData}></BlogsFunHome> */}
+         <BlogsHome></BlogsHome>
         </div>
       </section>
       {/* reviews section home  */}

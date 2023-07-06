@@ -1,31 +1,24 @@
 import { useState , useEffect } from "react";
 
-const BlogModel = ( url )=>{
 
-    const [isWaiting ,setIsWaiting ] = useState(true); 
-    const [Blogs, setBlogs] = useState([]);
+const BlogModel = (url)=>{
+
+    // const [isWaiting ,setIsWaiting ] = useState(true); 
+    const [BlogData, setBlogData] = useState([]);
    
     useEffect(()=>{
          setTimeout(()=>{
-             fetch(url)
-                .then(
-                    res => {
-                        console.log(res);
-                        return res.json();
-                    })
-                .then(
-                    data=>{
-                        setIsWaiting(false); 
-                        setBlogs( data);
-                        console.log(data);
-                    })
-                .catch(er => {
-                    console.log(er.message);
-                });
-        }, 1000);
+            const getBlogData= async()=>{
+            const reqData= await fetch(url);
+            const resData= await reqData.json();
+            setBlogData(resData);
+           console.log(resData);
+        }
+        getBlogData();
+        }, 500);
     }, [url]);
        
-return {Blogs , isWaiting} ;
+return {BlogData} ;
 
 
 }
